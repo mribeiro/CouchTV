@@ -7,21 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A407D3A22CB5E9C0A2C34A50 /* Pods_CouchTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */; };
+		E60A7CED1CC57AFA00395B01 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */; };
+		E62C34811CC6303500A85945 /* movie_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E62C34801CC6303500A85945 /* movie_sample.json */; };
+		E62C34831CC6698800A85945 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34821CC6698800A85945 /* SettingsViewController.swift */; };
+		E62C34861CC67BB000A85945 /* PreferencesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34851CC67BB000A85945 /* PreferencesProvider.swift */; };
+		E62C34891CC6CF0900A85945 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34881CC6CF0900A85945 /* HttpRouter.swift */; };
+		E62C348B1CC76A0900A85945 /* CouchPotatoMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C348A1CC76A0900A85945 /* CouchPotatoMovieProvider.swift */; };
+		E62C348D1CC7870F00A85945 /* CPConnectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C348C1CC7870F00A85945 /* CPConnectionTests.swift */; };
+		E62C348E1CC7953C00A85945 /* CouchPotatoMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C348A1CC76A0900A85945 /* CouchPotatoMovieProvider.swift */; };
+		E62C348F1CC7957E00A85945 /* PreferencesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34851CC67BB000A85945 /* PreferencesProvider.swift */; };
+		E62C34901CC7965100A85945 /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */; };
+		E62C34911CC7965F00A85945 /* HttpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34881CC6CF0900A85945 /* HttpRouter.swift */; };
+		E62C34921CC7985100A85945 /* DummyMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */; };
+		E63D3B9D1CC3DD33008AE114 /* search_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E63D3B9C1CC3DD33008AE114 /* search_sample.json */; };
+		E64091991CC3C06900FA0BE7 /* charts_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E64091981CC3C06900FA0BE7 /* charts_sample.json */; };
+		E640919A1CC3C07800FA0BE7 /* charts_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E64091981CC3C06900FA0BE7 /* charts_sample.json */; };
 		E6556F1C1CBD38F600C391F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6556F1B1CBD38F600C391F6 /* AppDelegate.swift */; };
-		E6556F1E1CBD38F600C391F6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6556F1D1CBD38F600C391F6 /* FirstViewController.swift */; };
-		E6556F201CBD38F600C391F6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6556F1F1CBD38F600C391F6 /* SecondViewController.swift */; };
 		E6556F231CBD38F600C391F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6556F211CBD38F600C391F6 /* Main.storyboard */; };
 		E6556F251CBD38F600C391F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6556F241CBD38F600C391F6 /* Assets.xcassets */; };
+		E66E59AD1CBD580B00CCE9D0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59AC1CBD580B00CCE9D0 /* Movie.swift */; };
+		E66E59B01CBD586D00CCE9D0 /* MovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */; };
+		E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */; };
+		E684B9FB1CC2C6A8007CF72F /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */; };
+		E684B9FF1CC2E165007CF72F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FE1CC2E165007CF72F /* SearchController.swift */; };
+		E6C895DD1CC2A293004581CF /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C895DC1CC2A293004581CF /* DiscoverCollectionViewController.swift */; };
+		E6C895DF1CC2A31A004581CF /* DiscoverCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C895DE1CC2A31A004581CF /* DiscoverCollectionCell.swift */; };
+		E6F2240B1CC2F73E007F1FBC /* SearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F2240A1CC2F73E007F1FBC /* SearchCollectionCell.swift */; };
+		E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F224121CC39C2A007F1FBC /* CouchTVTests.swift */; };
+		E6F2241C1CC39E5A007F1FBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59AC1CBD580B00CCE9D0 /* Movie.swift */; };
+		E6F2241D1CC39E5D007F1FBC /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */; };
+		E6F2241E1CC3A285007F1FBC /* Pods_CouchTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */; };
+		E6F224201CC3A48E007F1FBC /* suggestions_example.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */; };
+		E6F224211CC3A506007F1FBC /* suggestions_example.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		E6F224151CC39C2A007F1FBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E6556F101CBD38F500C391F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E6556F171CBD38F500C391F6;
+			remoteInfo = CouchTV;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.release.xcconfig"; sourceTree = "<group>"; };
+		7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.debug.xcconfig"; sourceTree = "<group>"; };
+		E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieViewController.swift; path = viewcontrollers/MovieViewController.swift; sourceTree = "<group>"; };
+		E62C34801CC6303500A85945 /* movie_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_sample.json; sourceTree = "<group>"; };
+		E62C34821CC6698800A85945 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = viewcontrollers/SettingsViewController.swift; sourceTree = "<group>"; };
+		E62C34851CC67BB000A85945 /* PreferencesProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreferencesProvider.swift; path = preferences/PreferencesProvider.swift; sourceTree = "<group>"; };
+		E62C34881CC6CF0900A85945 /* HttpRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpRouter.swift; path = httpengine/HttpRouter.swift; sourceTree = "<group>"; };
+		E62C348A1CC76A0900A85945 /* CouchPotatoMovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouchPotatoMovieProvider.swift; path = providers/CouchPotatoMovieProvider.swift; sourceTree = "<group>"; };
+		E62C348C1CC7870F00A85945 /* CPConnectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPConnectionTests.swift; sourceTree = "<group>"; };
+		E63D3B9C1CC3DD33008AE114 /* search_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search_sample.json; sourceTree = "<group>"; };
+		E64091981CC3C06900FA0BE7 /* charts_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = charts_sample.json; sourceTree = "<group>"; };
 		E6556F181CBD38F500C391F6 /* CouchTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouchTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6556F1B1CBD38F600C391F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E6556F1D1CBD38F600C391F6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		E6556F1F1CBD38F600C391F6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		E6556F221CBD38F600C391F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6556F241CBD38F600C391F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6556F261CBD38F600C391F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E66E59AC1CBD580B00CCE9D0 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = model/Movie.swift; sourceTree = "<group>"; };
+		E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieProvider.swift; path = providers/MovieProvider.swift; sourceTree = "<group>"; };
+		E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DummyMovieProvider.swift; path = providers/DummyMovieProvider.swift; sourceTree = "<group>"; };
+		E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryCategory.swift; path = model/DiscoveryCategory.swift; sourceTree = "<group>"; };
+		E684B9FE1CC2E165007CF72F /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = viewcontrollers/SearchController.swift; sourceTree = "<group>"; };
+		E6C895DC1CC2A293004581CF /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverCollectionViewController.swift; path = viewcontrollers/DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
+		E6C895DE1CC2A31A004581CF /* DiscoverCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverCollectionCell.swift; path = viewcontrollers/DiscoverCollectionCell.swift; sourceTree = "<group>"; };
+		E6F2240A1CC2F73E007F1FBC /* SearchCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchCollectionCell.swift; path = viewcontrollers/SearchCollectionCell.swift; sourceTree = "<group>"; };
+		E6F224101CC39C2A007F1FBC /* CouchTVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CouchTVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F224121CC39C2A007F1FBC /* CouchTVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouchTVTests.swift; sourceTree = "<group>"; };
+		E6F224141CC39C2A007F1FBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suggestions_example.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +89,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A407D3A22CB5E9C0A2C34A50 /* Pods_CouchTV.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F2240D1CC39C2A007F1FBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6F2241E1CC3A285007F1FBC /* Pods_CouchTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		47F85B53A1A5DC10467C97B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */,
+				1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		54F89D18BF5BF15DCBC5A6AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E62C34841CC67B6A00A85945 /* preferences */ = {
+			isa = PBXGroup;
+			children = (
+				E62C34851CC67BB000A85945 /* PreferencesProvider.swift */,
+			);
+			name = preferences;
+			sourceTree = "<group>";
+		};
+		E62C34871CC6CEEA00A85945 /* httpengine */ = {
+			isa = PBXGroup;
+			children = (
+				E62C34881CC6CF0900A85945 /* HttpRouter.swift */,
+			);
+			name = httpengine;
+			sourceTree = "<group>";
+		};
 		E6556F0F1CBD38F500C391F6 = {
 			isa = PBXGroup;
 			children = (
+				E62C34801CC6303500A85945 /* movie_sample.json */,
+				E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */,
+				E64091981CC3C06900FA0BE7 /* charts_sample.json */,
+				E63D3B9C1CC3DD33008AE114 /* search_sample.json */,
 				E6556F1A1CBD38F600C391F6 /* CouchTV */,
+				E6F224111CC39C2A007F1FBC /* CouchTVTests */,
 				E6556F191CBD38F500C391F6 /* Products */,
+				47F85B53A1A5DC10467C97B1 /* Pods */,
+				54F89D18BF5BF15DCBC5A6AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E6556F181CBD38F500C391F6 /* CouchTV.app */,
+				E6F224101CC39C2A007F1FBC /* CouchTVTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +164,59 @@
 		E6556F1A1CBD38F600C391F6 /* CouchTV */ = {
 			isa = PBXGroup;
 			children = (
+				E62C34871CC6CEEA00A85945 /* httpengine */,
+				E62C34841CC67B6A00A85945 /* preferences */,
+				E6C895D51CC27A95004581CF /* viewcontrollers */,
+				E66E59AE1CBD583E00CCE9D0 /* providers */,
+				E66E59AB1CBD57F100CCE9D0 /* model */,
 				E6556F1B1CBD38F600C391F6 /* AppDelegate.swift */,
-				E6556F1D1CBD38F600C391F6 /* FirstViewController.swift */,
-				E6556F1F1CBD38F600C391F6 /* SecondViewController.swift */,
 				E6556F211CBD38F600C391F6 /* Main.storyboard */,
 				E6556F241CBD38F600C391F6 /* Assets.xcassets */,
 				E6556F261CBD38F600C391F6 /* Info.plist */,
 			);
 			path = CouchTV;
+			sourceTree = "<group>";
+		};
+		E66E59AB1CBD57F100CCE9D0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				E66E59AC1CBD580B00CCE9D0 /* Movie.swift */,
+				E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		E66E59AE1CBD583E00CCE9D0 /* providers */ = {
+			isa = PBXGroup;
+			children = (
+				E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */,
+				E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */,
+				E62C348A1CC76A0900A85945 /* CouchPotatoMovieProvider.swift */,
+			);
+			name = providers;
+			sourceTree = "<group>";
+		};
+		E6C895D51CC27A95004581CF /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				E6C895DC1CC2A293004581CF /* DiscoverCollectionViewController.swift */,
+				E6C895DE1CC2A31A004581CF /* DiscoverCollectionCell.swift */,
+				E684B9FE1CC2E165007CF72F /* SearchController.swift */,
+				E6F2240A1CC2F73E007F1FBC /* SearchCollectionCell.swift */,
+				E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */,
+				E62C34821CC6698800A85945 /* SettingsViewController.swift */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		E6F224111CC39C2A007F1FBC /* CouchTVTests */ = {
+			isa = PBXGroup;
+			children = (
+				E6F224121CC39C2A007F1FBC /* CouchTVTests.swift */,
+				E62C348C1CC7870F00A85945 /* CPConnectionTests.swift */,
+				E6F224141CC39C2A007F1FBC /* Info.plist */,
+			);
+			path = CouchTVTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +226,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6556F291CBD38F600C391F6 /* Build configuration list for PBXNativeTarget "CouchTV" */;
 			buildPhases = (
+				7C194DC9B0CBFFBD4CF509B1 /* Check Pods Manifest.lock */,
+				F1E8CE906390702D6504F106 /* 📦 Check Pods Manifest.lock */,
 				E6556F141CBD38F500C391F6 /* Sources */,
 				E6556F151CBD38F500C391F6 /* Frameworks */,
 				E6556F161CBD38F500C391F6 /* Resources */,
+				C4CA9F559179F3D66BB896AB /* 📦 Embed Pods Frameworks */,
+				31FD4C04F062D484AF9FDDA0 /* 📦 Copy Pods Resources */,
+				45A5019D3D72447D4C2C44C0 /* Embed Pods Frameworks */,
+				8AC032098560BB161BCE65A2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -83,6 +244,24 @@
 			productName = CouchTV;
 			productReference = E6556F181CBD38F500C391F6 /* CouchTV.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E6F2240F1CC39C2A007F1FBC /* CouchTVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E6F224191CC39C2A007F1FBC /* Build configuration list for PBXNativeTarget "CouchTVTests" */;
+			buildPhases = (
+				E6F2240C1CC39C2A007F1FBC /* Sources */,
+				E6F2240D1CC39C2A007F1FBC /* Frameworks */,
+				E6F2240E1CC39C2A007F1FBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E6F224161CC39C2A007F1FBC /* PBXTargetDependency */,
+			);
+			name = CouchTVTests;
+			productName = CouchTVTests;
+			productReference = E6F224101CC39C2A007F1FBC /* CouchTVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +275,11 @@
 				TargetAttributes = {
 					E6556F171CBD38F500C391F6 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 8FGVD93AT9;
+					};
+					E6F2240F1CC39C2A007F1FBC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = E6556F171CBD38F500C391F6;
 					};
 				};
 			};
@@ -113,6 +297,7 @@
 			projectRoot = "";
 			targets = (
 				E6556F171CBD38F500C391F6 /* CouchTV */,
+				E6F2240F1CC39C2A007F1FBC /* CouchTVTests */,
 			);
 		};
 /* End PBXProject section */
@@ -122,25 +307,166 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E63D3B9D1CC3DD33008AE114 /* search_sample.json in Resources */,
+				E64091991CC3C06900FA0BE7 /* charts_sample.json in Resources */,
+				E62C34811CC6303500A85945 /* movie_sample.json in Resources */,
 				E6556F251CBD38F600C391F6 /* Assets.xcassets in Resources */,
+				E6F224211CC3A506007F1FBC /* suggestions_example.json in Resources */,
 				E6556F231CBD38F600C391F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E6F2240E1CC39C2A007F1FBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E640919A1CC3C07800FA0BE7 /* charts_sample.json in Resources */,
+				E6F224201CC3A48E007F1FBC /* suggestions_example.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31FD4C04F062D484AF9FDDA0 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		45A5019D3D72447D4C2C44C0 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C194DC9B0CBFFBD4CF509B1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8AC032098560BB161BCE65A2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4CA9F559179F3D66BB896AB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1E8CE906390702D6504F106 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6556F141CBD38F500C391F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6556F201CBD38F600C391F6 /* SecondViewController.swift in Sources */,
+				E684B9FF1CC2E165007CF72F /* SearchController.swift in Sources */,
+				E60A7CED1CC57AFA00395B01 /* MovieViewController.swift in Sources */,
+				E62C34831CC6698800A85945 /* SettingsViewController.swift in Sources */,
+				E66E59B01CBD586D00CCE9D0 /* MovieProvider.swift in Sources */,
+				E6C895DF1CC2A31A004581CF /* DiscoverCollectionCell.swift in Sources */,
+				E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */,
 				E6556F1C1CBD38F600C391F6 /* AppDelegate.swift in Sources */,
-				E6556F1E1CBD38F600C391F6 /* FirstViewController.swift in Sources */,
+				E6F2240B1CC2F73E007F1FBC /* SearchCollectionCell.swift in Sources */,
+				E66E59AD1CBD580B00CCE9D0 /* Movie.swift in Sources */,
+				E62C34861CC67BB000A85945 /* PreferencesProvider.swift in Sources */,
+				E6C895DD1CC2A293004581CF /* DiscoverCollectionViewController.swift in Sources */,
+				E62C348B1CC76A0900A85945 /* CouchPotatoMovieProvider.swift in Sources */,
+				E62C34891CC6CF0900A85945 /* HttpRouter.swift in Sources */,
+				E684B9FB1CC2C6A8007CF72F /* DiscoveryCategory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E6F2240C1CC39C2A007F1FBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E62C348D1CC7870F00A85945 /* CPConnectionTests.swift in Sources */,
+				E6F2241C1CC39E5A007F1FBC /* Movie.swift in Sources */,
+				E62C34921CC7985100A85945 /* DummyMovieProvider.swift in Sources */,
+				E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */,
+				E62C34901CC7965100A85945 /* MovieProvider.swift in Sources */,
+				E62C34911CC7965F00A85945 /* HttpRouter.swift in Sources */,
+				E62C348F1CC7957E00A85945 /* PreferencesProvider.swift in Sources */,
+				E6F2241D1CC39E5D007F1FBC /* DiscoveryCategory.swift in Sources */,
+				E62C348E1CC7953C00A85945 /* CouchPotatoMovieProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E6F224161CC39C2A007F1FBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E6556F171CBD38F500C391F6 /* CouchTV */;
+			targetProxy = E6F224151CC39C2A007F1FBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E6556F211CBD38F600C391F6 /* Main.storyboard */ = {
@@ -239,9 +565,11 @@
 		};
 		E6556F2A1CBD38F600C391F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CouchTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
@@ -251,13 +579,39 @@
 		};
 		E6556F2B1CBD38F600C391F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = CouchTV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E6F224171CC39C2A007F1FBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CouchTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouchTV.app/CouchTV";
+			};
+			name = Debug;
+		};
+		E6F224181CC39C2A007F1FBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CouchTVTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouchTV.app/CouchTV";
 			};
 			name = Release;
 		};
@@ -280,6 +634,16 @@
 				E6556F2B1CBD38F600C391F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E6F224191CC39C2A007F1FBC /* Build configuration list for PBXNativeTarget "CouchTVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6F224171CC39C2A007F1FBC /* Debug */,
+				E6F224181CC39C2A007F1FBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

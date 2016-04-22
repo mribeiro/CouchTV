@@ -1,7 +1,19 @@
 {
   "images" : [
     {
+      "resizing" : {
+        "mode" : "3-part-horizontal",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1
+        },
+        "cap-insets" : {
+          "right" : 200,
+          "left" : 199
+        }
+      },
       "idiom" : "tv",
+      "filename" : "bg.png",
       "scale" : "1x"
     }
   ],

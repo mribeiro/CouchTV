@@ -1,10 +1,10 @@
 {
   "layers" : [
     {
-      "filename" : "Front.imagestacklayer"
+      "filename" : "Wording.imagestacklayer"
     },
     {
-      "filename" : "Middle.imagestacklayer"
+      "filename" : "Couch.imagestacklayer"
     },
     {
       "filename" : "Back.imagestacklayer"

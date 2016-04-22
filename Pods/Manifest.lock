@@ -1,0 +1,22 @@
+PODS:
+  - Alamofire (3.3.1)
+  - Argo (3.0.1)
+  - Curry (2.2.0)
+  - Kingfisher (2.2.2)
+  - SwiftyUserDefaults (2.2.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.3)
+  - Argo (~> 3.0)
+  - Curry (~> 2.2)
+  - Kingfisher (~> 2.2)
+  - SwiftyUserDefaults
+
+SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
+  Argo: 22c5d62b7967020a641468c91dc9488bea9523b8
+  Curry: c22d80fff7f5a4b1bbd531455c3e2dbb099658a3
+  Kingfisher: 7e8de5b0cf7b5dc8ec559d193029a0859df93ef1
+  SwiftyUserDefaults: e7c8197a9d4068702e7f2406a968cae413b8de27
+
+COCOAPODS: 0.39.0
