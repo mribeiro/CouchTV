@@ -1,6 +1,7 @@
 # CouchTV
 
-Couch TV is a Couch Potato client for tvOS. It is not possible to use it on Apple TV as there is no web browser.
+Couch TV is a Couch Potato client for tvOS. 
+It is not possible to use its web interface on Apple TV as there is no web browser, so this app fills that gap :-)
 
 ## Disclaimer
 
