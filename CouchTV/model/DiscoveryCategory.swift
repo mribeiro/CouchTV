@@ -10,7 +10,6 @@ import Argo
 import Curry
 import Foundation
 
-
 class DiscoveryCategory {
     
     var name: String?

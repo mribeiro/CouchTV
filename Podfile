@@ -5,11 +5,11 @@ use_frameworks!
 
 target 'CouchTV' do
 
-	pod 'Alamofire', '~> 3.3'
-	pod 'Kingfisher', '~> 2.2'
-	pod 'Argo', '~> 3.0'
-	pod 'Curry', '~> 2.2'
-	pod 'SwiftyUserDefaults'
+	pod 'Alamofire', '~> 4.2'
+	pod 'Kingfisher', '~> 3.2'
+	pod 'Argo', '~> 4.1'
+	pod 'Curry', '~> 3.0'
+	pod 'SwiftyUserDefaults', '~> 3.0'
 
 end
 

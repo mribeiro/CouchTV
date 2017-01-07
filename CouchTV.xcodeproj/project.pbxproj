@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A407D3A22CB5E9C0A2C34A50 /* Pods_CouchTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */; };
 		E60A7CED1CC57AFA00395B01 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */; };
 		E62C34811CC6303500A85945 /* movie_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E62C34801CC6303500A85945 /* movie_sample.json */; };
 		E62C34831CC6698800A85945 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E62C34821CC6698800A85945 /* SettingsViewController.swift */; };
@@ -37,9 +36,9 @@
 		E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F224121CC39C2A007F1FBC /* CouchTVTests.swift */; };
 		E6F2241C1CC39E5A007F1FBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59AC1CBD580B00CCE9D0 /* Movie.swift */; };
 		E6F2241D1CC39E5D007F1FBC /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */; };
-		E6F2241E1CC3A285007F1FBC /* Pods_CouchTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */; };
 		E6F224201CC3A48E007F1FBC /* suggestions_example.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */; };
 		E6F224211CC3A506007F1FBC /* suggestions_example.json in Resources */ = {isa = PBXBuildFile; fileRef = E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */; };
+		FA1CA587FE8C86BFEFC7795C /* Pods_CouchTV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A91A29742F680D43156862 /* Pods_CouchTV.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,9 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.release.xcconfig"; sourceTree = "<group>"; };
-		7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.debug.xcconfig"; sourceTree = "<group>"; };
+		417F9C9B5E120590380E137F /* Pods-CouchTV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.debug.xcconfig"; sourceTree = "<group>"; };
+		A2A91A29742F680D43156862 /* Pods_CouchTV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouchTV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90C12EA1A6B0672E4706EAA /* Pods-CouchTV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouchTV.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.release.xcconfig"; sourceTree = "<group>"; };
 		E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieViewController.swift; path = viewcontrollers/MovieViewController.swift; sourceTree = "<group>"; };
 		E62C34801CC6303500A85945 /* movie_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_sample.json; sourceTree = "<group>"; };
 		E62C34821CC6698800A85945 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = viewcontrollers/SettingsViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A407D3A22CB5E9C0A2C34A50 /* Pods_CouchTV.framework in Frameworks */,
+				FA1CA587FE8C86BFEFC7795C /* Pods_CouchTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,26 +96,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E6F2241E1CC3A285007F1FBC /* Pods_CouchTV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47F85B53A1A5DC10467C97B1 /* Pods */ = {
+		0B018DD8D40EA08EBF30EB3E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */,
-				1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */,
+				417F9C9B5E120590380E137F /* Pods-CouchTV.debug.xcconfig */,
+				C90C12EA1A6B0672E4706EAA /* Pods-CouchTV.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		54F89D18BF5BF15DCBC5A6AD /* Frameworks */ = {
+		A25F9735481F7B76FD3B8B4E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BA9B4F0452E85A3B4D7CFFC /* Pods_CouchTV.framework */,
+				A2A91A29742F680D43156862 /* Pods_CouchTV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,8 +145,8 @@
 				E6556F1A1CBD38F600C391F6 /* CouchTV */,
 				E6F224111CC39C2A007F1FBC /* CouchTVTests */,
 				E6556F191CBD38F500C391F6 /* Products */,
-				47F85B53A1A5DC10467C97B1 /* Pods */,
-				54F89D18BF5BF15DCBC5A6AD /* Frameworks */,
+				0B018DD8D40EA08EBF30EB3E /* Pods */,
+				A25F9735481F7B76FD3B8B4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,15 +224,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6556F291CBD38F600C391F6 /* Build configuration list for PBXNativeTarget "CouchTV" */;
 			buildPhases = (
-				7C194DC9B0CBFFBD4CF509B1 /* Check Pods Manifest.lock */,
-				F1E8CE906390702D6504F106 /* 📦 Check Pods Manifest.lock */,
+				B156B48A2C20AF720188C62A /* [CP] Check Pods Manifest.lock */,
 				E6556F141CBD38F500C391F6 /* Sources */,
 				E6556F151CBD38F500C391F6 /* Frameworks */,
 				E6556F161CBD38F500C391F6 /* Resources */,
-				C4CA9F559179F3D66BB896AB /* 📦 Embed Pods Frameworks */,
-				31FD4C04F062D484AF9FDDA0 /* 📦 Copy Pods Resources */,
-				45A5019D3D72447D4C2C44C0 /* Embed Pods Frameworks */,
-				8AC032098560BB161BCE65A2 /* Copy Pods Resources */,
+				319A47F357A63E5A0A97EDEB /* [CP] Embed Pods Frameworks */,
+				FDF3F4230BA40E6A54842D19 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -270,15 +265,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Antonio Ribeiro";
 				TargetAttributes = {
 					E6556F171CBD38F500C391F6 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 8FGVD93AT9;
+						LastSwiftMigration = 0820;
 					};
 					E6F2240F1CC39C2A007F1FBC = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0820;
 						TestTargetID = E6556F171CBD38F500C391F6;
 					};
 				};
@@ -328,29 +325,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31FD4C04F062D484AF9FDDA0 /* 📦 Copy Pods Resources */ = {
+		319A47F357A63E5A0A97EDEB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45A5019D3D72447D4C2C44C0 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,64 +340,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C194DC9B0CBFFBD4CF509B1 /* Check Pods Manifest.lock */ = {
+		B156B48A2C20AF720188C62A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8AC032098560BB161BCE65A2 /* Copy Pods Resources */ = {
+		FDF3F4230BA40E6A54842D19 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4CA9F559179F3D66BB896AB /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F1E8CE906390702D6504F106 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -483,6 +435,7 @@
 		E6556F271CBD38F600C391F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -494,8 +447,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -528,6 +483,7 @@
 		E6556F281CBD38F600C391F6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -539,8 +495,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
@@ -557,6 +515,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = appletvos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				VALIDATE_PRODUCT = YES;
@@ -565,8 +524,9 @@
 		};
 		E6556F2A1CBD38F600C391F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CC18B28070022E75FD6675C8 /* Pods-CouchTV.debug.xcconfig */;
+			baseConfigurationReference = 417F9C9B5E120590380E137F /* Pods-CouchTV.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -574,13 +534,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		E6556F2B1CBD38F600C391F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7602DA77A6BC34C05E40E7 /* Pods-CouchTV.release.xcconfig */;
+			baseConfigurationReference = C90C12EA1A6B0672E4706EAA /* Pods-CouchTV.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -588,6 +550,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -599,6 +562,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouchTV.app/CouchTV";
 			};
 			name = Debug;
@@ -611,6 +575,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTVTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouchTV.app/CouchTV";
 			};
 			name = Release;

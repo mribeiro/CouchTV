@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Runes.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyUserDefaults.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -37,32 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>28E618D9359494C1A68D1922E59D48BE</key>
+		<key>0B902D3E52CB0D16AF20313A6FB12070</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>44B5A4E6C3F58DC3F0B5D4C032D7A0E1</key>
+		<key>3585E9ECEAA0FE227AFFF9DA34BD864C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
+		<key>378E1575B1A77DB0CC90AD1E5B4E59B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A28D7DA654B0D822D70CD09E4D4BC33</key>
+		<key>5D98A3361CF613E0BAFC8B5E6FB9014F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9B24D6BCAF661CD4A8D2269BC198A654</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F91226101ECE8FCFD221A3EC54481F82</key>
+		<key>C4944FEC314D1A66588651D006273ADE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F41C549321104136C8B2633819E784E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
