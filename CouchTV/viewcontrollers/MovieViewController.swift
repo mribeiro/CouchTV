@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Kingfisher
+import Alamofire
 
 class MovieViewController: UIViewController {
     
@@ -24,19 +25,22 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         loadMovieData()
+        //Alamofire.ParameterEncoding.encode(<#T##ParameterEncoding#>)
+        
     }
     
     private func loadMovieData() {
         
-        self.poster.kf_setImageWithURL(NSURL(string: (self.movie.mainPosterUrl)!)!)
+        let imageUrl = URL(string: (self.movie.mainPosterUrl)!)!
+        self.poster.kf.setImage(with: imageUrl)
         self.movieNameLabel.text = self.movie.name
         if let rating = self.movie.rating?.first {
             self.ratingProgressView.setProgress(rating / 10, animated: true)
             
         } else {
-            self.ratingProgressView.hidden = true
+            self.ratingProgressView.isHidden = true
         }
         
         self.movieSinopseTextView.text = movie.plot
@@ -47,19 +51,19 @@ class MovieViewController: UIViewController {
         if let movieLength = movie.length {
             self.durationLabel.text = "\(movieLength) min"
         } else {
-            self.durationLabel.hidden = true
+            self.durationLabel.isHidden = true
         }
         
-        downloadButton.enabled = movie.imdbId != nil
+        downloadButton.isEnabled = movie.imdbId != nil
         
         switch movie.status {
         case .Downloaded:
-            self.downloadButton.setTitle("Downloaded", forState: .Disabled)
-            self.downloadButton.enabled = false
+            self.downloadButton.setTitle("Downloaded", for: .disabled)
+            self.downloadButton.isEnabled = false
             
         case .Waiting:
-            self.downloadButton.setTitle("Wanted", forState: .Disabled)
-            self.downloadButton.enabled = false
+            self.downloadButton.setTitle("Wanted", for: .disabled)
+            self.downloadButton.isEnabled = false
             
         default: break
         }
@@ -68,18 +72,18 @@ class MovieViewController: UIViewController {
     
     @IBAction func downloadClicked(sender: AnyObject) {
         
-        downloadButton.enabled = false
+        downloadButton.isEnabled = false
         setNeedsFocusUpdate()
         updateFocusIfNeeded()
-        downloadButton.setTitle("Requesting...", forState: .Disabled)
+        downloadButton.setTitle("Requesting...", for: .disabled)
         
-        MovieProviderManager.instance.fetchMovie(movie.imdbId!) { result in
+        MovieProviderManager.instance.fetchMovie(imdbId: movie.imdbId!) { result in
             if result {
                 self.movie.status = .Waiting
-                self.downloadButton.setTitle("Wanted", forState: .Disabled)
+                self.downloadButton.setTitle("Wanted", for: .disabled)
                 
             } else {
-                self.downloadButton.enabled = true
+                self.downloadButton.isEnabled = true
                 self.downloadButton.titleLabel?.text = "Add"
             }
         }

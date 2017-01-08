@@ -7,8 +7,6 @@
 //
 
 import XCTest
-import Alamofire
-import Argo
 
 class CPConnectionTests: XCTestCase {
     

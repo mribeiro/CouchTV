@@ -10,16 +10,12 @@ import Foundation
 import Alamofire
 
 enum HttpRouter: URLRequestConvertible {
-    
-    case Suggestions
-    case Charts
-    case AddMovie(imdbId: String)
-    case GetCPVersion
-    case Search(searchTerm: String)
-    
-    case GetApiKey // postponed
-    
-    var URLRequest: NSMutableURLRequest {
+    /// Returns a URL request or throws if an `Error` was encountered.
+    ///
+    /// - throws: An `Error` if the underlying `URLRequest` is `nil`.
+    ///
+    /// - returns: A URL request.
+    public func asURLRequest() throws -> URLRequest {
         let preferences = PreferencesProviderManager.instance
         
         let apiKey = preferences.apiKey
@@ -55,21 +51,30 @@ enum HttpRouter: URLRequestConvertible {
             path = "/movie.search"
             params = [String: String]()
             params!["q"] = searchTerm
-        
+            
         }
         
         NSLog("getting root url")
-        let rootUrl: NSURL? = preferences.rootUrl
+        let rootUrl: URL? = preferences.rootUrl
         NSLog("Url: \(rootUrl)")
         
         if let url = rootUrl {
-            let urlRequest = NSMutableURLRequest(URL: url.URLByAppendingPathComponent(basePath + path))
-            return Alamofire.ParameterEncoding.URL.encode(urlRequest, parameters: params).0
+            let urlRequest = URLRequest(url: url.appendingPathComponent(basePath + path))
+            //return Alamofire.ParameterEncoding.encode(urlRequest, parameters: params).0
+            return urlRequest
             
         } else {
-            return NSMutableURLRequest()
+            return MutableURLRequest() as URLRequest
         }
-        
     }
+
+    
+    case Suggestions
+    case Charts
+    case AddMovie(imdbId: String)
+    case GetCPVersion
+    case Search(searchTerm: String)
+    
+    case GetApiKey // postponed
     
 }

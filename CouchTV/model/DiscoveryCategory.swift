@@ -9,6 +9,7 @@
 import Argo
 import Curry
 import Foundation
+import Runes
 
 class DiscoveryCategory {
     
@@ -22,7 +23,7 @@ class DiscoveryCategory {
 }
 
 class Suggestions: DiscoveryCategory, Decodable {
-    static func decode(j: JSON) -> Decoded<Suggestions> {
+    public static func decode(_ j: JSON) -> Decoded<Suggestions> {
         return curry(Suggestions.init)
             <^> j <|? "categoryName"
             <*> j <||? "movies"
@@ -31,7 +32,7 @@ class Suggestions: DiscoveryCategory, Decodable {
 
 class Chart: DiscoveryCategory, Decodable {
     
-    static func decode(j: JSON) -> Decoded<Chart> {
+    public static func decode(_ j: JSON) -> Decoded<Chart> {
         return curry(Chart.init)
             <^> j <|? "name"
             <*> j <||? "list"
@@ -41,7 +42,7 @@ class Chart: DiscoveryCategory, Decodable {
 struct ChartsWrapper: Decodable {
     var charts: [Chart]
 
-    static func decode(j: JSON) -> Decoded<ChartsWrapper> {
+    static func decode(_ j: JSON) -> Decoded<ChartsWrapper> {
         return curry(ChartsWrapper.init)
             <^> j <|| "charts"
     }

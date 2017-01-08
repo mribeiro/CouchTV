@@ -13,7 +13,7 @@ import Curry
 
 class CouchPotatoMovieProvider: MovieProvider {
     
-    func getDiscovery(callback: ([DiscoveryCategory]?)->()) {
+    func getDiscovery(callback: @escaping ([DiscoveryCategory]?)->()) {
         
         guard PreferencesProviderManager.instance.isAppConfigured else {
             callback(nil)
@@ -34,7 +34,7 @@ class CouchPotatoMovieProvider: MovieProvider {
             }
             
             array = array?.filter {
-                return $0.movies?.count > 0
+                return ($0.movies?.count) ?? 0 > 0
             }
             
             callback(array)
@@ -43,36 +43,37 @@ class CouchPotatoMovieProvider: MovieProvider {
         
         let fetchCharts = { () -> () in
             
-            self.doRequest(HttpRouter.Charts.URLRequest,
-                           whenSuccess: { json in
-                            
-                            if let _json = json {
-                                let charts: Decoded<ChartsWrapper> = ChartsWrapper.decode(_json)
-                                chartsFromCP = charts.value?.charts
-                                
-                                if let _charts = chartsFromCP {
-                                    if array == nil {
-                                        array = _charts
-                                    } else {
-                                        array?.appendContentsOf(_charts)
+            try! self.doRequest(request: HttpRouter.Charts.asURLRequest(),
+                                whenSuccess: { json in
+                                    
+                                    if let _json = json {
+                                        let charts: Decoded<ChartsWrapper> = ChartsWrapper.decode(_json)
+                                        chartsFromCP = charts.value?.charts
+                                        
+                                        if let _charts = chartsFromCP {
+                                            if array == nil {
+                                                array = _charts
+                                            } else {
+                                                array?.append(contentsOf: _charts)
+                                            }
+                                            
+                                        }
+                                        
                                     }
                                     
-                                }
-                                
-                            }
-                            
-                },
-                           whenError: { errorDescription in
-                            
-                },
-                           whenComplete: {
-                            chartsFetched = true
-                            finalize()
+            },
+                                whenError: { errorDescription in
+                                    
+            },
+                                whenComplete: {
+                                    chartsFetched = true
+                                    finalize()
             })
+            
         }
         
         let fetchSuggestions = { () -> () in
-            self.doRequest(HttpRouter.Suggestions.URLRequest,
+            try! self.doRequest(request: HttpRouter.Suggestions.asURLRequest(),
                            whenSuccess: { json in
                             
                             if let _json = json {
@@ -84,10 +85,10 @@ class CouchPotatoMovieProvider: MovieProvider {
                                 }
                             }
                             
-                },
+            },
                            whenError: { errorDescription in
                             
-                },
+            },
                            whenComplete: {
                             suggestionsFetched = true
                             fetchCharts()
@@ -99,7 +100,7 @@ class CouchPotatoMovieProvider: MovieProvider {
         
     }
     
-    func search(searchTerm: String, callback: ([Movie]?->())) {
+    func search(searchTerm: String, callback: @escaping (([Movie]?)->())) {
         
         guard PreferencesProviderManager.instance.isAppConfigured else {
             callback(nil)
@@ -111,7 +112,7 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        doRequest(HttpRouter.Search(searchTerm: searchTerm).URLRequest,
+        try! doRequest(request: HttpRouter.Search(searchTerm: searchTerm).asURLRequest(),
                   whenSuccess: { json in
                     
                     var movies: [Movie]?
@@ -123,58 +124,58 @@ class CouchPotatoMovieProvider: MovieProvider {
                     
                     callback(movies)
                     
-            },
+        },
                   whenError: { errorDescription in
                     callback(nil)
                     
-            }, whenComplete: .None
+        }, whenComplete: .none
         )
     }
     
-    func fetchMovie(imdbId: String, callback: (Bool->())) {
+    func fetchMovie(imdbId: String, callback: @escaping ((Bool)->())) {
         
         guard PreferencesProviderManager.instance.isAppConfigured else {
             callback(false)
             return
         }
         
-        doRequest(HttpRouter.AddMovie(imdbId: imdbId).URLRequest,
+        try! doRequest(request: HttpRouter.AddMovie(imdbId: imdbId).asURLRequest(),
                   whenSuccess: { json in
                     callback(true)
                     
-            },
+        },
                   whenError: { errorDescription in
                     callback(false)
-            }, whenComplete: .None)
+        }, whenComplete: .none)
         
     }
     
-    func getKey(callback: (String?->())) {
+    func getKey(callback: ((String?)->())) {
         //one day this will have proper code!
         NSLog("Not implemented")
         callback("Not implemented")
     }
     
-    func testConnection(callback: (Bool->())) {
+    internal func testConnection(callback: @escaping ((Bool)->())) {
         guard PreferencesProviderManager.instance.isAppConfigured else {
             callback(false)
             return
         }
         
-        doRequest(HttpRouter.GetCPVersion.URLRequest,
+        try! doRequest(request: HttpRouter.GetCPVersion.asURLRequest(),
                   
                   whenSuccess: { json in
                     callback(true)
                     
-            },
+        },
                   whenError: { errorDescription in
                     callback(false)
                     
-            }, whenComplete: .None)
+        }, whenComplete: .none)
     }
     
     
-    private func doRequest(request: NSURLRequest, whenSuccess: (json: JSON?)->(), whenError: (description: String)->(), whenComplete: Optional<()->()>) {
+    private func doRequest(request: URLRequest, whenSuccess: @escaping (_ json: JSON?)->(), whenError: @escaping (_ description: String)->(), whenComplete: Optional<()->()>) {
         
         NSLog("requesting \(request)")
         Alamofire.request(request).responseJSON { response in
@@ -182,13 +183,13 @@ class CouchPotatoMovieProvider: MovieProvider {
             let result = response.result
             
             switch result {
-            case .Failure(let error):
-                NSLog("Request error: " + error.description)
-                whenError(description: error.description)
+            case .failure(let error):
+                NSLog("Request error: " + error.localizedDescription)
+                whenError(error.localizedDescription)
                 
-            case .Success(let value):
+            case .success(let value):
                 let json = JSON(value)
-                whenSuccess(json: json)
+                whenSuccess(json)
             }
             
             whenComplete?()

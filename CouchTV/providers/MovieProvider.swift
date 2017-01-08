@@ -10,16 +10,16 @@ import Foundation
 
 protocol MovieProvider {
     
-    func testConnection(callback: (Bool->()))
+    func testConnection(callback: @escaping ((Bool)->()))
     
-    func search(searchTerm: String, callback: ([Movie]?->()))
+    func search(searchTerm: String, callback: @escaping (([Movie]?)->()))
     
-    func fetchMovie(imdbId: String, callback: (Bool->()))
+    func fetchMovie(imdbId: String, callback: @escaping ((Bool)->()))
     
-    func getDiscovery(callback: ([DiscoveryCategory]?)->())
+    func getDiscovery(callback: @escaping ([DiscoveryCategory]?)->())
     
     // out of scope, for now
-    func getKey(callback: (String?->()))
+    func getKey(callback: ((String?)->()))
     
 }
 

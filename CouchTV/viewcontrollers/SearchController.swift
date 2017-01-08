@@ -11,7 +11,7 @@ import UIKit
 import Kingfisher
 
 class SearchController: UICollectionViewController, UISearchResultsUpdating {
-    
+
     static let storyboardIdentifier = "SearchResultsViewController"
     
     private var selectedMovie: Movie?
@@ -22,26 +22,25 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
         }
     }
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies?.count ?? 0
     }
     
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("search_coll_cell", forIndexPath: indexPath)
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "search_coll_cell", for: indexPath)
         
         if let _cell = cell as? SearchCollectionCell {
             
-            _cell.poster.kf_cancelDownloadTask()
-            _cell.poster.kf_showIndicatorWhenLoading = true
+            _cell.poster.kf.cancelDownloadTask()
+            _cell.poster.kf.indicatorType = .activity
             
             let movie = self.movies?[indexPath.row]
             if let mainposter = movie?.mainPosterUrl {
-                _cell.poster.kf_setImageWithURL(NSURL(string: mainposter)!)
+                _cell.poster.kf.setImage(with: URL(string: mainposter)!)
             }
             
         }
@@ -61,14 +60,13 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
         return CGSize(width: 300, height: 438)
     }
     
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.selectedMovie = self.movies?[indexPath.row]
-        performSegueWithIdentifier("segue_search_detail", sender: self)
+        performSegue(withIdentifier: "segue_search_detail", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let view = segue.destinationViewController as? MovieViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let view = segue.destination as? MovieViewController {
             view.movie = self.selectedMovie
         }
     }
@@ -77,7 +75,7 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
         didSet {
             guard searchString != oldValue else { return }
             
-            MovieProviderManager.instance.search(searchString ?? "") {
+            MovieProviderManager.instance.search(searchTerm: searchString ?? "") {
                 NSLog("Got \($0?.count) movies")
                 self.movies = $0
             }
@@ -85,7 +83,7 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
         }
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
+    public func updateSearchResults(for searchController: UISearchController) {
         NSLog("Searching by \(searchController.searchBar.text)")
         searchString = searchController.searchBar.text ?? ""
     }

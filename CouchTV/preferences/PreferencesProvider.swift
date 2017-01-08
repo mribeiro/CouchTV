@@ -10,7 +10,7 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
-    static let rootUrl = DefaultsKey<NSURL?>("rooturl")
+    static let rootUrl = DefaultsKey<URL?>("rooturl")
     static let apiKey = DefaultsKey<String?>("apikey")
 }
 
@@ -18,7 +18,7 @@ protocol PreferencesProvider {
     
     var isAppConfigured: Bool { get }
     
-    var rootUrl: NSURL? { get set }
+    var rootUrl: URL? { get set }
     
     var apiKey: String? { get set }
     
@@ -37,7 +37,7 @@ class RealPreferencesProvider: PreferencesProvider {
         return rootUrl != nil && apiKey != nil
     }
     
-    var rootUrl: NSURL? {
+    var rootUrl: URL? {
         get {
             return Defaults[.rootUrl]
         }

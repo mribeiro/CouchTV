@@ -18,7 +18,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var apiKeyTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         testConnection()
     }
     
@@ -29,7 +29,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveSettingsClicked(sender: AnyObject) {
         settingsManager.apiKey = apiKeyTextField.text
-        settingsManager.rootUrl = NSURL(string: serverUrl.text!)
+        settingsManager.rootUrl = URL(string: serverUrl.text!)
         testConnection()
     }
     

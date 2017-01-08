@@ -6,19 +6,20 @@
 //  Copyright © 2016 Antonio Ribeiro. All rights reserved.
 //
 
+
 import Foundation
 import Argo
 
 class DummyMovieProvider : MovieProvider {
     
-    func fetchMovie(imdbId: String, callback: (Bool -> ())) {
+    func fetchMovie(imdbId: String, callback: @escaping ((Bool) -> ())) {
         callback(true)
     }
     
-    func getDiscovery(callback: ([DiscoveryCategory]?)->()) {
+    internal func getDiscovery(callback: @escaping ([DiscoveryCategory]?) -> ()) {
         var categories: [DiscoveryCategory] = [DiscoveryCategory]()
         
-        if let json = loadFileByName("suggestions_example", andExtension: "json") {
+        if let json = loadFileByName(name: "suggestions_example", andExtension: "json") {
             
             var category: DiscoveryCategory?
             
@@ -31,13 +32,14 @@ class DummyMovieProvider : MovieProvider {
             categories.append(category!)
         }
         
-        if let json = loadFileByName("charts_sample", andExtension: "json") {
+        if let json = loadFileByName(name: "charts_sample", andExtension: "json") {
             
             let j = JSON(json)
             let chartsWrapper = ChartsWrapper.decode(j).value
             
+            
             chartsWrapper?.charts.forEach {
-                if $0.movies?.count > 0 {
+                if let movies = $0.movies, movies.count > 0 {
                     categories.append($0)
                 }
             }
@@ -47,37 +49,37 @@ class DummyMovieProvider : MovieProvider {
     }
     
     
-    func search(searchTerm: String, callback: ([Movie]?->())) {
+    func search(searchTerm: String, callback: @escaping (([Movie]?)->())) {
         NSLog("Searching in dummy for \(searchTerm)")
         
         var filteredMovies: [Movie]?
         
-        if let json = loadFileByName("search_sample", andExtension: "json") {
+        if let json = loadFileByName(name: "search_sample", andExtension: "json") {
             
             let j = JSON(json)
             let movieSearchWrapper = MovieSearchWrapper.decode(j)
             
-            let lowerCaseSearch = searchTerm.lowercaseString
+            let lowerCaseSearch = searchTerm.lowercased()
             filteredMovies = movieSearchWrapper.value?.movies.filter {
-                $0.name.lowercaseString.containsString(lowerCaseSearch)
+                $0.name.lowercased().contains(lowerCaseSearch)
             }
         }
         
         callback(filteredMovies)
     }
     
-    func getKey(callback: (String? -> ())) {
+    func getKey(callback: ((String?) -> ())) {
         callback("dummy key")
     }
     
-    func testConnection(callback: (Bool -> ())) {
+    func testConnection(callback: @escaping ((Bool) -> ())) {
         callback(true)
     }
     
     private func loadFileByName(name: String, andExtension: String) -> AnyObject? {
-        if let path = NSBundle.mainBundle().pathForResource(name, ofType: andExtension) {
+        if let path = Bundle.main.path(forResource: name, ofType: andExtension) {
             if let jsonData = NSData(contentsOfFile: path) {
-                return try? NSJSONSerialization.JSONObjectWithData(jsonData, options: [])
+                return try! JSONSerialization.jsonObject(with: jsonData as Data, options: []) as AnyObject?
             }
         }
         

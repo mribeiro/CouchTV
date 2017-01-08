@@ -7,45 +7,94 @@
 //
 
 import Foundation
-import Argo
 import Curry
+import Argo
+import Runes
 
-
-class Movie {
+class Movie: Decodable {
     
-    var name: String
-    var rating: [Float]?
-    var postersUrls: [String]?
-    var imdbId: String?
-    var plot: String?
-    var year: Int
-    var length: Int?
-    var tagline: String?
-    var mpaa: String?
-    var genres: [String]
-    var postersOriginalUrls: [String]?
-    var backdropsUrls: [String]?
-    var backdropsOriginalUrls: [String]?
-    var actorsWithPictures: [String: String]?
-    var status: MovieStatus
-    var libraryStatus: String?
-    var wantedStatus: String?
-    
-    var mainPosterUrl: String? {
+    public static func decode(_ json: JSON) -> Decoded<Movie> {
+        let a = curry(DiscoveryMovie.init)
+            <^> json <| "title"
+            <*> json <||? ["info", "rating", "imdb"]
+            <*> json <||? ["info", "images", "poster"]
+            <*> json <|? ["info", "imdb"]
+            <*> json <|? ["info", "plot"]
         
-        if let urls = postersOriginalUrls where postersOriginalUrls?.count > 0 {
-            return urls.first
+        let b = a
+            <*> json <| ["info", "year"]
+            <*> json <|? ["info", "runtime"]
+            <*> json <|? ["info", "tagline"]
+            <*> json <|? ["info", "mpaa"]
+            <*> json <|| ["info", "genres"]
+        
+        
+        let c = b
+            <*> json <||? ["info", "images", "poster_original"]
+            <*> json <||? ["info", "images", "backdrop"]
+            <*> json <||? ["info", "images", "backdrop_original"]
+            <*> .optional(json <| ["info", "images", "actors"] >>- { [String: String].decode($0) })
+            <*> json <|? "status"
+            <*> json <|? ["info", "in_wanted", "status"] <|> pure(nil)
+        
+        
+        
+        if let error = c.error {
+            NSLog("### ERROR DECODING DISCOVERY MOVIE --> \(error.description)")
         }
         
-        if let urls = postersUrls where postersUrls?.count > 0 {
-            return urls.first
-        }
-        
-        return nil
-        
+        return c
     }
-    
-    init(name: String, rating: [Float]?, postersUrls: [String]?, imdbId: String?, plot: String?, year: Int, length: Int?, tagline: String?, mpaa: String?, genres: [String], postersOriginalUrls: [String]?, backdropsUrls: [String]?, backdropsOriginalUrls: [String]?, actors: [String: String]?, libraryStatus: String?, wantedStatus: String?) {
+
+    let name: String
+    let rating: [Float]?
+    let postersUrls: [String]?
+    let imdbId: String?
+    let plot: String?
+    let year: Int
+    let length: Int?
+    let tagline: String?
+    let mpaa: String?
+    let genres: [String]
+    let postersOriginalUrls: [String]?
+    let backdropsUrls: [String]?
+    let backdropsOriginalUrls: [String]?
+    let actorsWithPictures: [String: String]?
+    let libraryStatus: String?
+    let wantedStatus: String?
+
+    var status: MovieStatus
+    var mainPosterUrl: String? {
+
+        if let urls = postersOriginalUrls, urls.count > 0 {
+            return urls.first
+        }
+
+        if let urls = postersUrls, urls.count > 0 {
+            return urls.first
+        }
+
+        return nil
+
+    }
+
+    init(name: String,
+         rating: [Float]?,
+         postersUrls: [String]?,
+         imdbId: String?,
+         plot: String?,
+         year: Int,
+         length: Int?,
+         tagline: String?,
+         mpaa: String?,
+         genres: [String],
+         postersOriginalUrls: [String]?,
+         backdropsUrls: [String]?,
+         backdropsOriginalUrls: [String]?,
+         actors: [String: String]?,
+         libraryStatus: String?,
+         wantedStatus: String?) {
+        
         self.name = name
         self.rating = rating
         self.postersUrls = postersUrls
@@ -62,104 +111,117 @@ class Movie {
         self.actorsWithPictures = actors
         self.libraryStatus = libraryStatus
         self.wantedStatus = wantedStatus
-        
-        self.status = MovieStatus.statusFromLibraryStatus(libraryStatus, andWantedStatus: wantedStatus)
-    }
-    
-}
 
-class SearchMovie: Movie, Decodable {
-    
-    static func decode(j: JSON) -> Decoded<SearchMovie> {
-        
-        let a = curry(SearchMovie.init)
-            <^> j <| "original_title"
-            <*> j <||? ["rating", "imdb"]
-            <*> j <||? ["images", "poster"]
-            <*> j <|? "imdb"
-            <*> j <|? "plot"
-            <*> j <| "year"
-            <*> j <|? "runtime"
-            
-        let b = a
-            <*> j <|? "tagline"
-            <*> j <|? "mpaa"
-            <*> j <|| "genres"
-            <*> j <||? ["images", "poster_original"]
-            <*> j <||? ["images", "backdrop"]
-            <*> j <||? ["images", "backdrop_original"]
-            <*> .optional(j <| ["images", "actors"] >>- { [String: String].decode($0) })
-            <*> j <|? ["in_library", "status"] <|> pure(nil)
-            <*> j <|? ["in_wanted", "status"] <|> pure(nil)
-        
-        
-        if let error = b.error {
-            NSLog("### ERROR DECODING SEARCH MOVIE --> \(error.description)")
-        }
-        
-        return b
+        self.status = MovieStatus.statusFromLibraryStatus(ls: libraryStatus, andWantedStatus: wantedStatus)
     }
+
 }
 
 class DiscoveryMovie: Movie, Decodable {
     
-    static func decode(j: JSON) -> Decoded<DiscoveryMovie> {
+    public static func decode(_ json: JSON) -> Decoded<DiscoveryMovie> {
         let a = curry(DiscoveryMovie.init)
-            <^> j <| "title"
-            <*> j <||? ["info", "rating", "imdb"]
-            <*> j <||? ["info", "images", "poster"]
-            <*> j <|? ["info", "imdb"]
-            <*> j <|? ["info", "plot"]
-            <*> j <| ["info", "year"]
-            <*> j <|? ["info", "runtime"]
+            <^> json <| "title"
+            <*> json <||? ["info", "rating", "imdb"]
+            <*> json <||? ["info", "images", "poster"]
+            <*> json <|? ["info", "imdb"]
+            <*> json <|? ["info", "plot"]
         
         let b = a
-            <*> j <|? ["info", "tagline"]
-            <*> j <|? ["info", "mpaa"]
-            <*> j <|| ["info", "genres"]
-            <*> j <||? ["info", "images", "poster_original"]
-            <*> j <||? ["info", "images", "backdrop"]
-            <*> j <||? ["info", "images", "backdrop_original"]
-            <*> .optional(j <| ["info", "images", "actors"] >>- { [String: String].decode($0) })
-            <*> j <|? "status" <|> pure(nil)
-            <*> j <|? ["info", "in_wanted", "status"] <|> pure(nil)
+            <*> json <| ["info", "year"]
+            <*> json <|? ["info", "runtime"]
+            <*> json <|? ["info", "tagline"]
+            <*> json <|? ["info", "mpaa"]
+            <*> json <|| ["info", "genres"]
         
-        if let error = b.error {
+        
+        let c = b
+            <*> json <||? ["info", "images", "poster_original"]
+            <*> json <||? ["info", "images", "backdrop"]
+            <*> json <||? ["info", "images", "backdrop_original"]
+            <*> .optional(json <| ["info", "images", "actors"] >>- { [String: String].decode($0) })
+            <*> json <|? "status"
+            <*> json <|? ["info", "in_wanted", "status"] <|> pure(nil)
+        
+        
+        
+        if let error = c.error {
             NSLog("### ERROR DECODING DISCOVERY MOVIE --> \(error.description)")
         }
         
-        return b
+        return c
+    }
+
+    
+    
+}
+
+class SearchMovie: Movie, Decodable {
+
+    public static func decode(_ j: JSON) -> Decoded<SearchMovie> {
+
+        let a = curry(SearchMovie.init)
+                <^> j <| "original_title"
+                <*> j <||? ["rating", "imdb"]
+                <*> j <||? ["images", "poster"]
+                <*> j <|? "imdb"
+                <*> j <|? "plot"
+
+        let b = a
+                <*> j <| "year"
+                <*> j <|? "runtime"
+                <*> j <|? "tagline"
+                <*> j <|? "mpaa"
+                <*> j <|| "genres"
+                <*> j <||? ["images", "poster_original"]
+
+        let c = b
+                <*> j <||? ["images", "backdrop"]
+                <*> j <||? ["images", "backdrop_original"]
+                <*> .optional(j <| ["images", "actors"] >>- {
+            [String: String].decode($0)
+        })
+                <*> j <|? ["in_library", "status"]
+                <*> j <|? ["in_wanted", "status"]
+
+
+        if let error = c.error {
+            NSLog("### ERROR DECODING SEARCH MOVIE --> \(error.description)")
+        }
+
+        return c
     }
 }
 
 struct MovieSearchWrapper: Decodable {
-    
+
+
     let movies: [SearchMovie]
-    
-    static func decode(json: JSON) -> Decoded<MovieSearchWrapper> {
+
+    public static func decode(_ json: JSON) -> Decoded<MovieSearchWrapper> {
         return curry(MovieSearchWrapper.init)
-            <^> json <|| "movies"
+                <^> json <|| "movies"
     }
-    
+
 }
 
 enum MovieStatus {
-    
+
     case Waiting
     case Downloaded
     case NotDownloaded
-    
+
     static func statusFromLibraryStatus(ls: String?, andWantedStatus ws: String?) -> MovieStatus {
-        
+
         if ws != nil || ls == "active" {
             return .Waiting
         }
-        
+
         if ls == "done" {
             return .Downloaded
         }
-        
+
         return .NotDownloaded
     }
-    
+
 }
