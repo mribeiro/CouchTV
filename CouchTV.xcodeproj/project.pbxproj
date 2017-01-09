@@ -597,6 +597,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
@@ -613,6 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.aribeiro.CouchTV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
 		};

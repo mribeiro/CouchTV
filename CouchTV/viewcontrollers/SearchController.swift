@@ -71,20 +71,31 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
         }
     }
     
+    var timer: Timer?
+    
+    func set(_ movies: [Movie]?) {
+        self.movies = movies
+    }
+    
     private var searchString: String? {
         didSet {
             guard searchString != oldValue else { return }
             
-            MovieProviderManager.instance.search(searchTerm: searchString ?? "") {
-                NSLog("Got \($0?.count) movies")
-                self.movies = $0
-            }
+            timer?.invalidate()
             
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
+                print("Searching by \(self.searchString)")
+                MovieProviderManager.instance.search(searchTerm: self.searchString ?? "") {
+                    NSLog("Got \($0?.count) movies")
+                    self.movies = $0
+                }
+            }
+
         }
     }
     
     public func updateSearchResults(for searchController: UISearchController) {
-        NSLog("Searching by \(searchController.searchBar.text)")
+        print("Search set to \(searchController.searchBar.text)")
         searchString = searchController.searchBar.text ?? ""
     }
     
