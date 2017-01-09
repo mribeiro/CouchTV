@@ -60,8 +60,9 @@ enum HttpRouter: URLRequestConvertible {
         
         if let url = rootUrl {
             let urlRequest = URLRequest(url: url.appendingPathComponent(basePath + path))
+            return try URLEncoding.default.encode(urlRequest, with: params)
             //return Alamofire.ParameterEncoding.encode(urlRequest, parameters: params).0
-            return urlRequest
+            //return urlRequest
             
         } else {
             return MutableURLRequest() as URLRequest

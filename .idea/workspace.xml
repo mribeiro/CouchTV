@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="715d82c3-4cbc-4074-a890-ed39d32da214" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/CouchTV.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV.xcodeproj/xcuserdata/aribeiro.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/CouchTV.xcodeproj/xcuserdata/aribeiro.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/AppDelegate.swift" afterPath="$PROJECT_DIR$/CouchTV/AppDelegate.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/httpengine/HttpRouter.swift" afterPath="$PROJECT_DIR$/CouchTV/httpengine/HttpRouter.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/model/DiscoveryCategory.swift" afterPath="$PROJECT_DIR$/CouchTV/model/DiscoveryCategory.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/model/Movie.swift" afterPath="$PROJECT_DIR$/CouchTV/model/Movie.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/preferences/PreferencesProvider.swift" afterPath="$PROJECT_DIR$/CouchTV/preferences/PreferencesProvider.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/providers/CouchPotatoMovieProvider.swift" afterPath="$PROJECT_DIR$/CouchTV/providers/CouchPotatoMovieProvider.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/providers/DummyMovieProvider.swift" afterPath="$PROJECT_DIR$/CouchTV/providers/DummyMovieProvider.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/providers/MovieProvider.swift" afterPath="$PROJECT_DIR$/CouchTV/providers/MovieProvider.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/viewcontrollers/DiscoverCollectionViewController.swift" afterPath="$PROJECT_DIR$/CouchTV/viewcontrollers/DiscoverCollectionViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/viewcontrollers/MovieViewController.swift" afterPath="$PROJECT_DIR$/CouchTV/viewcontrollers/MovieViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/viewcontrollers/SearchController.swift" afterPath="$PROJECT_DIR$/CouchTV/viewcontrollers/SearchController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTV/viewcontrollers/SettingsViewController.swift" afterPath="$PROJECT_DIR$/CouchTV/viewcontrollers/SettingsViewController.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CouchTVTests/CPConnectionTests.swift" afterPath="$PROJECT_DIR$/CouchTVTests/CPConnectionTests.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/aribeiro.xcuserdatad/xcschemes/xcschememanagement.plist" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/aribeiro.xcuserdatad/xcschemes/xcschememanagement.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Alamofire/Alamofire.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Argo/Argo.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Curry/Curry.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Kingfisher/Kingfisher.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-frameworks.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-resources.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-CouchTV/Pods-CouchTV.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Runes/Runes.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults-prefix.pch" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults-prefix.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults-umbrella.h" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults-umbrella.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SwiftyUserDefaults/SwiftyUserDefaults.xcconfig" />
-    </list>
+    <list default="true" id="715d82c3-4cbc-4074-a890-ed39d32da214" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,14 +14,17 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="appletvsimulatorApple_TV_1080p_10.1_x86_64_3" />
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="Movie.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CouchTV/model/Movie.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2475">
-              <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
+            <state relative-caret-position="647">
+              <caret line="217" column="9" lean-forward="false" selection-start-line="217" selection-start-column="9" selection-end-line="217" selection-end-column="9" />
               <folding>
                 <element signature="e#141#158#0" expanded="true" />
+                <marker date="1483875025000" expanded="true" signature="5659:5667" ph="{...}" />
+                <marker date="1483875025000" expanded="true" signature="5706:5910" ph="{...}" />
+                <marker date="1483875025000" expanded="true" signature="5816:5907" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -88,9 +49,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="22" />
     <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="height" value="774" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -107,7 +68,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -136,6 +96,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -173,6 +134,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -204,35 +171,36 @@
       <option name="presentableId" value="Default" />
       <updated>1483823302900</updated>
       <workItem from="1483823307207" duration="1877000" />
+      <workItem from="1483881474044" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1877000" />
+    <option name="totallyTimeSpent" value="1880000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="22" width="1280" height="774" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24609375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,20 +216,35 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/CouchTV/model/Movie.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#141#158#0" expanded="true" />
+            <marker date="1483875025000" expanded="true" signature="5659:5667" ph="{...}" />
+            <marker date="1483875025000" expanded="true" signature="5706:5910" ph="{...}" />
+            <marker date="1483875025000" expanded="true" signature="5816:5907" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CouchTVTests/CPConnectionTests.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CouchTV/model/Movie.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2475">
-          <caret line="165" column="26" lean-forward="false" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
+        <state relative-caret-position="647">
+          <caret line="217" column="9" lean-forward="false" selection-start-line="217" selection-start-column="9" selection-end-line="217" selection-end-column="9" />
           <folding>
             <element signature="e#141#158#0" expanded="true" />
+            <marker date="1483875025000" expanded="true" signature="5659:5667" ph="{...}" />
+            <marker date="1483875025000" expanded="true" signature="5706:5910" ph="{...}" />
+            <marker date="1483875025000" expanded="true" signature="5816:5907" ph="{...}" />
           </folding>
         </state>
       </provider>

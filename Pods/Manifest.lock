@@ -4,6 +4,12 @@ PODS:
     - Runes (>= 4.0.0)
   - Curry (3.0.0)
   - Kingfisher (3.2.4)
+  - Moya (8.0.0):
+    - Moya/Core (= 8.0.0)
+  - Moya/Core (8.0.0):
+    - Alamofire (~> 4.2.0)
+    - Result (~> 3.1.0)
+  - Result (3.1.0)
   - Runes (4.0.1)
   - SwiftyUserDefaults (3.0.0)
 
@@ -12,6 +18,7 @@ DEPENDENCIES:
   - Argo (~> 4.1)
   - Curry (~> 3.0)
   - Kingfisher (~> 3.2)
+  - Moya (~> 8.0)
   - SwiftyUserDefaults (~> 3.0)
 
 SPEC CHECKSUMS:
@@ -19,9 +26,11 @@ SPEC CHECKSUMS:
   Argo: 014ac072f97462bc1a9b83d302edb351488a532f
   Curry: eb3d2c75aec678b3cc7fb2729d2ad6dd121531d1
   Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
+  Moya: 850a166ab8241bd1c1cea6dbe012e3a2ad62944a
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
   Runes: ff20f163b478ac2c0e18158d6086fd5b1997f983
   SwiftyUserDefaults: 0f1d45fc3aafb9064dac661e367f8f83fe21a4b4
 
-PODFILE CHECKSUM: a6e3120727e05bea9d5255951b13607af5ed1b15
+PODFILE CHECKSUM: c42c1810e191470eb8e9ae4e8a929ad23e63d097
 
 COCOAPODS: 1.2.0.beta.3

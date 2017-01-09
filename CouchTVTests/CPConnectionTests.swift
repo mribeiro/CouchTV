@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import Moya
+
 
 class CPConnectionTests: XCTestCase {
     
@@ -15,7 +17,7 @@ class CPConnectionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        preferences.rootUrl = NSURL(string: "http://192.168.1.200:5050/cp")
+        preferences.rootUrl = URL(string: "http://192.168.1.200:5050/cp")
         preferences.apiKey = "d55fb3c8feae47048d7e6229be94dbeb"
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -25,9 +27,24 @@ class CPConnectionTests: XCTestCase {
         super.tearDown()
     }
     
+    func testConnectivityWithMoya() {
+        
+        let cp = MoyaProvider<CouchPotatoService>()
+        cp.request(.getCPVersion) { result in
+            switch result {
+            case .success(let moyaResponse):
+                XCTAssertEqual(moyaResponse.statusCode, 200)
+                
+            case .failure(let error):
+                print("")
+            }
+        }
+        
+    }
+    
     func testConnectivity() {
         
-        let asyncExpectation = expectationWithDescription("longRunningFunction")
+        let asyncExpectation = expectation(description: "longRunningFunction")
         
         var bool: Bool = false
         
@@ -36,22 +53,22 @@ class CPConnectionTests: XCTestCase {
             asyncExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(30) { error in
+        waitForExpectations(timeout: 30) { error in
             XCTAssertTrue(bool)
         }
     }
     
     func testSearch() {
-        let asyncExpectation = expectationWithDescription("longRunningFunction")
+        let asyncExpectation = expectation(description: "longRunningFunction")
         
         var movies: [Movie]?
         
-        provider.search("the") { p in
+        provider.search(searchTerm  : "the") { p in
             movies = p
             asyncExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(30) { error in
+        waitForExpectations(timeout: 30) { error in
             XCTAssertNotNil(movies)
         }
     }
@@ -59,23 +76,23 @@ class CPConnectionTests: XCTestCase {
     func testAdd() {
         let imdbId = "tt0111161" //The Shawshank Redemption
         
-        let asyncExpectation = expectationWithDescription("longRunningFunction")
+        let asyncExpectation = expectation(description: "longRunningFunction")
         
         var bool = false
         
-        provider.fetchMovie(imdbId) { _bool in
+        provider.fetchMovie(imdbId: imdbId) { _bool in
             bool = _bool
             asyncExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(30) { error in
+        waitForExpectations(timeout: 30) { error in
             XCTAssertTrue(bool)
         }
         
     }
     
     func testDiscovery() {
-        let asyncExpectation = expectationWithDescription("longRunningFunction")
+        let asyncExpectation = expectation(description: "longRunningFunction")
         var categories: [DiscoveryCategory]?
         
         provider.getDiscovery { _categories in
@@ -83,7 +100,7 @@ class CPConnectionTests: XCTestCase {
             asyncExpectation.fulfill()
         }
         
-        waitForExpectationsWithTimeout(30) { error in
+        waitForExpectations(timeout: 30) { error in
             XCTAssertNotNil(categories)
         }
         

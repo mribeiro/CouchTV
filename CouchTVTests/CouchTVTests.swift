@@ -23,13 +23,13 @@ class CouchTVTests: XCTestCase {
     }
     
     func openAndReadFile(fileName: String, ofType: String, callback: (AnyObject)->()) {
-        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: ofType) {
+        if let path = Bundle.main.path(forResource: fileName, ofType: ofType) {
             
             if let jsonData = NSData(contentsOfFile: path) {
                 
-                if let json = try? NSJSONSerialization.JSONObjectWithData(jsonData, options: []) {
+                if let json = try? JSONSerialization.jsonObject(with: jsonData as Data, options: []) {
                     
-                    callback(json)
+                    callback(json as AnyObject)
                     
                 } else {
                     XCTAssertThrowsError("Not possible to parse JSON from \(fileName).\(ofType)")
@@ -44,7 +44,7 @@ class CouchTVTests: XCTestCase {
     
     func testSearchParse() {
         
-        openAndReadFile("search_sample", ofType: "json") { json in
+        openAndReadFile(fileName: "search_sample", ofType: "json") { json in
             let j = JSON(json)
             let searchWrapper = MovieSearchWrapper.decode(j).value
             
@@ -54,7 +54,7 @@ class CouchTVTests: XCTestCase {
     
     func testChartsParse() {
         
-        openAndReadFile("charts_sample", ofType: "json") { json in
+        openAndReadFile(fileName: "charts_sample", ofType: "json") { json in
             var chartsWrapper: ChartsWrapper?
             
             let j = JSON(json)
@@ -85,7 +85,7 @@ class CouchTVTests: XCTestCase {
     
     func testSuggestionParse() {
         
-        openAndReadFile("suggestions_example", ofType: "json") { json in
+        openAndReadFile(fileName: "suggestions_example", ofType: "json") { json in
             var category: DiscoveryCategory?
             
             let j = JSON(json)
@@ -138,7 +138,7 @@ class CouchTVTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock {
+        self.measure {
             // Put the code you want to measure the time of here.
         }
     }

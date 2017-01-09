@@ -112,7 +112,7 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        try! doRequest(request: HttpRouter.Search(searchTerm: searchTerm).asURLRequest(),
+        try? doRequest(request: HttpRouter.Search(searchTerm: searchTerm).asURLRequest(),
                   whenSuccess: { json in
                     
                     var movies: [Movie]?

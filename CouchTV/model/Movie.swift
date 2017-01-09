@@ -11,41 +11,8 @@ import Curry
 import Argo
 import Runes
 
-class Movie: Decodable {
+class Movie {
     
-    public static func decode(_ json: JSON) -> Decoded<Movie> {
-        let a = curry(DiscoveryMovie.init)
-            <^> json <| "title"
-            <*> json <||? ["info", "rating", "imdb"]
-            <*> json <||? ["info", "images", "poster"]
-            <*> json <|? ["info", "imdb"]
-            <*> json <|? ["info", "plot"]
-        
-        let b = a
-            <*> json <| ["info", "year"]
-            <*> json <|? ["info", "runtime"]
-            <*> json <|? ["info", "tagline"]
-            <*> json <|? ["info", "mpaa"]
-            <*> json <|| ["info", "genres"]
-        
-        
-        let c = b
-            <*> json <||? ["info", "images", "poster_original"]
-            <*> json <||? ["info", "images", "backdrop"]
-            <*> json <||? ["info", "images", "backdrop_original"]
-            <*> .optional(json <| ["info", "images", "actors"] >>- { [String: String].decode($0) })
-            <*> json <|? "status"
-            <*> json <|? ["info", "in_wanted", "status"] <|> pure(nil)
-        
-        
-        
-        if let error = c.error {
-            NSLog("### ERROR DECODING DISCOVERY MOVIE --> \(error.description)")
-        }
-        
-        return c
-    }
-
     let name: String
     let rating: [Float]?
     let postersUrls: [String]?
@@ -141,7 +108,7 @@ class DiscoveryMovie: Movie, Decodable {
             <*> json <||? ["info", "images", "backdrop_original"]
             <*> .optional(json <| ["info", "images", "actors"] >>- { [String: String].decode($0) })
             <*> json <|? "status"
-            <*> json <|? ["info", "in_wanted", "status"] <|> pure(nil)
+            <*> json <|? ["info", "in_wanted", "status"]
         
         
         
