@@ -8,7 +8,9 @@
 
 import XCTest
 import Moya
-
+import Foundation
+import Alamofire
+import Argo
 
 class CPConnectionTests: XCTestCase {
     
@@ -35,10 +37,23 @@ class CPConnectionTests: XCTestCase {
             case .success(let moyaResponse):
                 XCTAssertEqual(moyaResponse.statusCode, 200)
                 
-            case .failure(let error):
+            case .failure( _):
                 print("")
             }
         }
+        
+    }
+    
+    func testGetKeyWithMoya() {
+        
+        let asyncExpectation = expectation(description: "longRunningFunction")
+        
+        self.provider.getKey(username: "", password: "") { (key) in
+            XCTAssertEqual(key, "d55fb3c8feae47048d7e6229be94dbeb")
+            asyncExpectation.fulfill()
+        }
+                
+        waitForExpectations(timeout: 30)
         
     }
     
@@ -93,17 +108,15 @@ class CPConnectionTests: XCTestCase {
     
     func testDiscovery() {
         let asyncExpectation = expectation(description: "longRunningFunction")
-        var categories: [DiscoveryCategory]?
         
         provider.getDiscovery { _categories in
-            categories = _categories
+            XCTAssertNotNil(_categories)
             asyncExpectation.fulfill()
         }
         
         waitForExpectations(timeout: 30) { error in
-            XCTAssertNotNil(categories)
+            XCTAssertTrue(error == nil, "Did not get categories in time")
         }
-        
     }
     
 }

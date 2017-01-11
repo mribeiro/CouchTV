@@ -17,6 +17,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var serverUrl: UITextField!
     @IBOutlet weak var apiKeyTextField: UITextField!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet var usernameLabel: UITextField!
+    @IBOutlet var passwordLabel: UITextField!
     
     override func viewWillAppear(_ animated: Bool) {
         testConnection()
@@ -27,10 +29,31 @@ class SettingsViewController: UIViewController {
         apiKeyTextField.text = settingsManager.apiKey
     }
     
-    @IBAction func saveSettingsClicked(sender: AnyObject) {
-        settingsManager.apiKey = apiKeyTextField.text
-        settingsManager.rootUrl = URL(string: serverUrl.text!)
+    @IBAction func serverUrlChanged(_ sender: UITextField) {
+        settingsManager.rootUrl = URL(string:sender.text!)
+    }
+    
+    @IBAction func apiKeyChanged(_ sender: UITextField) {
+        settingsManager.apiKey = sender.text
+    }
+    
+    @IBAction func testConnectionClicked(_ sender: Any) {
         testConnection()
+    }
+    
+    @IBAction func getKeyClicked(_ sender: Any) {
+        self.movieManager.getKey(username: usernameLabel.text ?? "", password: passwordLabel.text ?? "") { (key) in
+            
+            guard let _key = key else {
+                self.statusLabel.text = "Could not get key"
+                return
+            }
+            
+            self.apiKeyTextField.text = _key
+            self.settingsManager.apiKey = _key
+            self.testConnection()
+            
+        }
     }
     
     private func testConnection() {

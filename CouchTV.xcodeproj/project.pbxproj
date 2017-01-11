@@ -31,6 +31,8 @@
 		E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */; };
 		E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
+		E67ADA571E244A6200459F69 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA561E244A6200459F69 /* ApiKey.swift */; };
+		E67ADA581E244CF300459F69 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA561E244A6200459F69 /* ApiKey.swift */; };
 		E684B9FB1CC2C6A8007CF72F /* DiscoveryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */; };
 		E684B9FF1CC2E165007CF72F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E684B9FE1CC2E165007CF72F /* SearchController.swift */; };
 		E6C895DD1CC2A293004581CF /* DiscoverCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C895DC1CC2A293004581CF /* DiscoverCollectionViewController.swift */; };
@@ -79,6 +81,7 @@
 		E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieProvider.swift; path = providers/MovieProvider.swift; sourceTree = "<group>"; };
 		E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DummyMovieProvider.swift; path = providers/DummyMovieProvider.swift; sourceTree = "<group>"; };
 		E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouchPotatoService.swift; path = providers/CouchPotatoService.swift; sourceTree = "<group>"; };
+		E67ADA561E244A6200459F69 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryCategory.swift; path = model/DiscoveryCategory.swift; sourceTree = "<group>"; };
 		E684B9FE1CC2E165007CF72F /* SearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchController.swift; path = viewcontrollers/SearchController.swift; sourceTree = "<group>"; };
 		E6C895DC1CC2A293004581CF /* DiscoverCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoverCollectionViewController.swift; path = viewcontrollers/DiscoverCollectionViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +176,7 @@
 		E6556F1A1CBD38F600C391F6 /* CouchTV */ = {
 			isa = PBXGroup;
 			children = (
+				E67ADA531E2444C200459F69 /* extensions */,
 				E62C34871CC6CEEA00A85945 /* httpengine */,
 				E62C34841CC67B6A00A85945 /* preferences */,
 				E6C895D51CC27A95004581CF /* viewcontrollers */,
@@ -191,6 +195,7 @@
 			children = (
 				E66E59AC1CBD580B00CCE9D0 /* Movie.swift */,
 				E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */,
+				E67ADA561E244A6200459F69 /* ApiKey.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -204,6 +209,13 @@
 				E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */,
 			);
 			name = providers;
+			sourceTree = "<group>";
+		};
+		E67ADA531E2444C200459F69 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 		E6C895D51CC27A95004581CF /* viewcontrollers */ = {
@@ -447,6 +459,7 @@
 				E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */,
 				E6F2240B1CC2F73E007F1FBC /* SearchCollectionCell.swift in Sources */,
 				E66E59AD1CBD580B00CCE9D0 /* Movie.swift in Sources */,
+				E67ADA571E244A6200459F69 /* ApiKey.swift in Sources */,
 				E62C34861CC67BB000A85945 /* PreferencesProvider.swift in Sources */,
 				E6C895DD1CC2A293004581CF /* DiscoverCollectionViewController.swift in Sources */,
 				E62C348B1CC76A0900A85945 /* CouchPotatoMovieProvider.swift in Sources */,
@@ -463,6 +476,7 @@
 				E6F2241C1CC39E5A007F1FBC /* Movie.swift in Sources */,
 				E62C34921CC7985100A85945 /* DummyMovieProvider.swift in Sources */,
 				E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */,
+				E67ADA581E244CF300459F69 /* ApiKey.swift in Sources */,
 				E62C34901CC7965100A85945 /* MovieProvider.swift in Sources */,
 				E62C34911CC7965F00A85945 /* HttpRouter.swift in Sources */,
 				E62C348F1CC7957E00A85945 /* PreferencesProvider.swift in Sources */,

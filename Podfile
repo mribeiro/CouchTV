@@ -11,6 +11,7 @@ target 'CouchTV' do
 	pod 'Curry', '~> 3.0'
 	pod 'SwiftyUserDefaults', '~> 3.0'
 	pod 'Moya', '~> 8.0'
+	pod 'CryptoSwift', '~> 0.6'
 
 	target 'CouchTVTests' do
     		inherit! :search_paths

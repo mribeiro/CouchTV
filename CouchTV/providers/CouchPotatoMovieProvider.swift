@@ -10,8 +10,16 @@ import Foundation
 import Alamofire
 import Argo
 import Curry
+import Moya
 
 class CouchPotatoMovieProvider: MovieProvider {
+
+    
+    private let couchPotatoService: MoyaProvider<CouchPotatoService>
+    
+    init () {
+        self.couchPotatoService = MoyaProvider<CouchPotatoService>()
+    }
     
     func getDiscovery(callback: @escaping ([DiscoveryCategory]?)->()) {
         
@@ -20,78 +28,77 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        var suggestionsFetched = false
-        var chartsFetched = false
-        
-        var suggestionsFromCP: DiscoveryCategory?
-        var chartsFromCP: [DiscoveryCategory]?
-        var array: [DiscoveryCategory]?
-        
-        let finalize = { () -> () in
-            
-            guard suggestionsFetched && chartsFetched else {
-                return
-            }
-            
-            array = array?.filter {
+        let finalize = { (allDiscoveries: [DiscoveryCategory]?) -> () in
+
+            let filteredDiscoveries = allDiscoveries?.filter {
                 return ($0.movies?.count) ?? 0 > 0
             }
             
-            callback(array)
+            callback(filteredDiscoveries)
             
         }
         
-        let fetchCharts = { () -> () in
+        let fetchCharts = { (suggestions: [DiscoveryCategory]?) -> () in
             
-            try! self.doRequest(request: HttpRouter.Charts.asURLRequest(),
-                                whenSuccess: { json in
+            self.doMoyaRequest(CouchPotatoService.charts,
+                                whenSuccess: { (json) -> ([DiscoveryCategory]?) in
                                     
                                     if let _json = json {
                                         let charts: Decoded<ChartsWrapper> = ChartsWrapper.decode(_json)
-                                        chartsFromCP = charts.value?.charts
+                                        let chartsFromCP = charts.value
                                         
-                                        if let _charts = chartsFromCP {
-                                            if array == nil {
-                                                array = _charts
+                                        if let _charts = chartsFromCP?.charts {
+                                            if suggestions == nil {
+                                                return _charts
                                             } else {
-                                                array?.append(contentsOf: _charts)
+                                                
+                                                let chartsAsDiscoveryCategory: [DiscoveryCategory] = _charts.map({ (chart) -> DiscoveryCategory in
+                                                    return chart
+                                                })
+                                                
+                                                var allDiscoveries: [DiscoveryCategory]? = suggestions
+                                                allDiscoveries!.append(contentsOf: chartsAsDiscoveryCategory)
+
+                                                return allDiscoveries
                                             }
                                             
                                         }
                                         
                                     }
                                     
+                                    return nil
+                                    
             },
                                 whenError: { errorDescription in
                                     
             },
-                                whenComplete: {
-                                    chartsFetched = true
-                                    finalize()
+                                whenComplete: { (success, error) in
+                                    finalize(success)
             })
             
         }
         
         let fetchSuggestions = { () -> () in
-            try! self.doRequest(request: HttpRouter.Suggestions.asURLRequest(),
-                           whenSuccess: { json in
+            self.doMoyaRequest(CouchPotatoService.suggestions,
+                           whenSuccess: { (json) -> ([DiscoveryCategory]?) in
                             
                             if let _json = json {
                                 let suggestions:Decoded<Suggestions> = Suggestions.decode(_json)
-                                suggestionsFromCP = suggestions.value
+                                let suggestionsFromCP = suggestions.value
                                 suggestionsFromCP?.name = "Suggestions"
                                 if let _suggestions = suggestionsFromCP {
-                                    array = [_suggestions]
+                                    return [_suggestions]
                                 }
                             }
+                            
+                            return nil
                             
             },
                            whenError: { errorDescription in
                             
             },
-                           whenComplete: {
-                            suggestionsFetched = true
-                            fetchCharts()
+                           whenComplete: { (success, error) in
+                            fetchCharts(success)
                             
             })
         }
@@ -112,24 +119,27 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        try? doRequest(request: HttpRouter.Search(searchTerm: searchTerm).asURLRequest(),
-                  whenSuccess: { json in
-                    
-                    var movies: [Movie]?
-                    
-                    if let _json = json {
-                        let searchWrapper: Decoded<MovieSearchWrapper> = MovieSearchWrapper.decode(_json)
-                        movies = searchWrapper.value?.movies
-                    }
-                    
-                    callback(movies)
-                    
+        doMoyaRequest(CouchPotatoService.search(searchTerm: searchTerm),
+                      whenSuccess: { (json) in
+            
+                        var movies: [Movie]?
+                        
+                        if let _json = json {
+                            let searchWrapper: Decoded<MovieSearchWrapper> = MovieSearchWrapper.decode(_json)
+                            movies = searchWrapper.value?.movies
+                        }
+                        
+                        callback(movies)
+            
         },
-                  whenError: { errorDescription in
-                    callback(nil)
-                    
-        }, whenComplete: .none
+                      whenError: { (error) in
+                        
+                        callback(nil)
+            
+        },
+                      whenComplete: .none
         )
+        
     }
     
     func fetchMovie(imdbId: String, callback: @escaping ((Bool)->())) {
@@ -139,7 +149,7 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        try! doRequest(request: HttpRouter.AddMovie(imdbId: imdbId).asURLRequest(),
+        doMoyaRequest(CouchPotatoService.addMovie(imdbId: imdbId),
                   whenSuccess: { json in
                     callback(true)
                     
@@ -150,11 +160,28 @@ class CouchPotatoMovieProvider: MovieProvider {
         
     }
     
-    func getKey(callback: ((String?)->())) {
-        //one day this will have proper code!
-        NSLog("Not implemented")
-        callback("Not implemented")
+    func getKey(username: String, password: String, callback: @escaping ((String?)->())) {
+        
+        doMoyaRequest(CouchPotatoService.getKey(username: username, password: password),
+                      whenSuccess: { (json) in
+                        
+                        var apiKey: String?
+                        
+                        if let _json = json {
+                            let apiKeyDecoded = ApiKey.decode(_json)
+                            apiKey = apiKeyDecoded.value?.apiKey
+                        }
+                        
+                        callback(apiKey)
+                        
+        },
+                      whenError: { (error) in
+                        callback(nil)
+                        
+        },
+                      whenComplete: .none)
     }
+    
     
     internal func testConnection(callback: @escaping ((Bool)->())) {
         guard PreferencesProviderManager.instance.isAppConfigured else {
@@ -162,38 +189,49 @@ class CouchPotatoMovieProvider: MovieProvider {
             return
         }
         
-        try! doRequest(request: HttpRouter.GetCPVersion.asURLRequest(),
-                  
-                  whenSuccess: { json in
-                    callback(true)
-                    
+        doMoyaRequest(.getCPVersion,
+                      whenSuccess: { (json) in
+                        callback(true)
+                        
         },
-                  whenError: { errorDescription in
-                    callback(false)
-                    
-        }, whenComplete: .none)
+                      whenError: { (error) in
+                        callback(false)
+                        
+        },
+                      whenComplete: .none
+        )
+        
     }
     
-    
-    private func doRequest(request: URLRequest, whenSuccess: @escaping (_ json: JSON?)->(), whenError: @escaping (_ description: String)->(), whenComplete: Optional<()->()>) {
+    private func doMoyaRequest<S, E>(_ target: CouchPotatoService,
+                           whenSuccess: @escaping (_ json: JSON?)->(S?),
+                           whenError: @escaping (_ error: Swift.Error)->(E?),
+                           whenComplete: Optional<(S?, E?)->()>) {
         
-        NSLog("requesting \(request)")
-        Alamofire.request(request).responseJSON { response in
+        self.couchPotatoService.request(target) { (response) in
             
-            let result = response.result
+            var successResult: S?
+            var errorResult: E?
             
-            switch result {
+            switch response {
             case .failure(let error):
-                NSLog("Request error: " + error.localizedDescription)
-                whenError(error.localizedDescription)
+                print("Request error: " + error.localizedDescription)
+                errorResult = whenError(error)
                 
             case .success(let value):
-                let json = JSON(value)
-                whenSuccess(json)
+                
+                if let json = try? value.mapJSON() {
+                    successResult = whenSuccess(JSON(json))
+                    
+                } else {
+                    //whenError(nil)
+                }
+            
             }
             
-            whenComplete?()
+            whenComplete?(successResult, errorResult)
+            
         }
+        
     }
-    
 }

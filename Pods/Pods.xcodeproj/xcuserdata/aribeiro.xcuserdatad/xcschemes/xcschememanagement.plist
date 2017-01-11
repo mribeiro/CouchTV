@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>CryptoSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Curry.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,11 +72,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2AECE058BA6B890A3B15F6657B76EA3E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>378E1575B1A77DB0CC90AD1E5B4E59B9</key>
 		<dict>
 			<key>primary</key>
@@ -87,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8819EE0F28C589BBE3AB2F9CD9BD430F</key>
+		<key>5DA79C305EEE0EDBFC3BFB28B9DF7302</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6A4A49E564F6D7F858C4BB1522090F62</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BB1C1403B2419F911818DA8413FDA07</key>
 		<dict>
 			<key>primary</key>
 			<true/>

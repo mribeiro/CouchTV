@@ -11,6 +11,10 @@ import Foundation
 import Argo
 
 class DummyMovieProvider : MovieProvider {
+    internal func getKey(username: String, password: String, callback: @escaping ((String?) -> ())) {
+        callback("dummy key")
+    }
+
     
     func fetchMovie(imdbId: String, callback: @escaping ((Bool) -> ())) {
         callback(true)
@@ -66,10 +70,6 @@ class DummyMovieProvider : MovieProvider {
         }
         
         callback(filteredMovies)
-    }
-    
-    func getKey(callback: ((String?) -> ())) {
-        callback("dummy key")
     }
     
     func testConnection(callback: @escaping ((Bool) -> ())) {
