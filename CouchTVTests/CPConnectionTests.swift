@@ -29,22 +29,7 @@ class CPConnectionTests: XCTestCase {
         super.tearDown()
     }
     
-    func testConnectivityWithMoya() {
-        
-        let cp = MoyaProvider<CouchPotatoService>()
-        cp.request(.getCPVersion) { result in
-            switch result {
-            case .success(let moyaResponse):
-                XCTAssertEqual(moyaResponse.statusCode, 200)
-                
-            case .failure( _):
-                print("")
-            }
-        }
-        
-    }
-    
-    func testGetKeyWithMoya() {
+    func testGetKey() {
         
         let asyncExpectation = expectation(description: "longRunningFunction")
         
@@ -88,7 +73,7 @@ class CPConnectionTests: XCTestCase {
         }
     }
     
-    func testAdd() {
+    func _testAdd() {
         let imdbId = "tt0111161" //The Shawshank Redemption
         
         let asyncExpectation = expectation(description: "longRunningFunction")

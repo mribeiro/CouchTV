@@ -59,7 +59,7 @@ class CouchTVTests: XCTestCase {
             
             let j = JSON(json)
             chartsWrapper = ChartsWrapper.decode(j).value
-            print(chartsWrapper)
+            print(chartsWrapper ?? "No charts wrapper gotten")
             
             if let charts = chartsWrapper?.charts {
                 
@@ -93,7 +93,7 @@ class CouchTVTests: XCTestCase {
             category = _disc.value
             
             category?.name = "Suggestions"
-            print(category)
+            print(category ?? "No category received")
             
             XCTAssertNotNil(category?.movies)
             
