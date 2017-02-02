@@ -14,6 +14,13 @@ import Argo
 
 class CPConnectionTests: XCTestCase {
     
+    let endpointClosure = { (target: CouchPotatoService) -> Endpoint<CouchPotatoService> in
+        return Endpoint<CouchPotatoService>(url: target.baseURL.appendingPathComponent(target.path).absoluteString,
+                                            sampleResponseClosure: {.networkResponse(200, target.sampleData)},
+                                            method: target.method,
+                                            parameters: target.parameters)
+    }
+    
     var preferences = PreferencesProviderManager.instance
     let provider = CouchPotatoMovieProvider()
     
@@ -21,6 +28,9 @@ class CPConnectionTests: XCTestCase {
         super.setUp()
         preferences.rootUrl = URL(string: "http://192.168.1.200:5050/cp")
         preferences.apiKey = "d55fb3c8feae47048d7e6229be94dbeb"
+        
+        
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -32,10 +42,35 @@ class CPConnectionTests: XCTestCase {
     func testGetKey() {
         
         let asyncExpectation = expectation(description: "longRunningFunction")
+        let p = MoyaProvider<CouchPotatoService>(endpointClosure: endpointClosure)
+        p.request(.getKey(username: "", password: "")) { (result) in
+            
+            switch result {
+            case .success(let j):
+                
+                let json = try? j.mapJSON()
+                let jj = JSON(json)
+                
+                
+                let decodedApiKey: Decoded<ApiKey> = ApiKey.decode(jj)
+                
+                let v = decodedApiKey.value
+                
+                let a = ""
+                
+                
+                
+            default:
+                let s = "";
+            }
+            
+            asyncExpectation.fulfill()
+
+        }
+
         
         self.provider.getKey(username: "", password: "") { (key) in
             XCTAssertEqual(key, "d55fb3c8feae47048d7e6229be94dbeb")
-            asyncExpectation.fulfill()
         }
                 
         waitForExpectations(timeout: 30)

@@ -22,7 +22,24 @@ enum CouchPotatoService: TargetType {
     
     /// Provides stub data for use in testing.
     public var sampleData: Data {
-        return "{}".utf8Encoded
+        
+        switch self {
+        case .charts :
+            return self.getDataFromResource("charts_sample", ofType: "json")
+            
+        case .suggestions:
+            return self.getDataFromResource("suggestions_example", ofType: "json")
+            
+        case .search:
+            return self.getDataFromResource("search_sample", ofType: "json")
+            
+            
+            
+        default:
+            return "{}".utf8Encoded
+        }
+        
+        
     }
 
     /// The type of HTTP task to be performed.
@@ -30,6 +47,14 @@ enum CouchPotatoService: TargetType {
         return .request
     }
 
+    func getDataFromResource(_ resource: String, ofType type: String) -> Data {
+        guard let path = Bundle.main.path(forResource: resource, ofType: type),
+            let data = Data(base64Encoded: path) else {
+                return Data()
+        }
+        return data
+    }
+    
     /// The method used for parameter encoding.
 
     /// The parameters to be incoded in the request.
