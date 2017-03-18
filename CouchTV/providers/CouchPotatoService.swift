@@ -70,6 +70,9 @@ enum CouchPotatoService: TargetType {
         case .getKey(let username, let password):
             return ["p": password.md5(), "u": username.md5()]
             
+        case .getMovies(let status):
+            return ["status": status]
+            
         default:
             return nil
         }
@@ -115,6 +118,9 @@ enum CouchPotatoService: TargetType {
         case .getKey(_, _):
             return "/getkey/"
             
+        case .getMovies(_):
+            return "movie.list"
+            
         }
     }
     
@@ -124,6 +130,7 @@ enum CouchPotatoService: TargetType {
     case getCPVersion
     case search(searchTerm: String)
     case getKey(username: String, password: String)
+    case getMovies(status: String)
     
 }
 
