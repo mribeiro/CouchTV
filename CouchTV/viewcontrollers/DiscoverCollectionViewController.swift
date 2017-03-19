@@ -50,8 +50,11 @@ class DiscoverCollectionViewController: UICollectionViewController {
             
             let movie = getMovieByIndexPath(indexPath: indexPath)
             
-            _cell.label.text = "\(indexPath.section) \(indexPath.row)"
-            _cell.poster.kf.setImage(with: URL(string: movie.mainPosterUrl!)!)
+            _cell.poster.kf.setImage(with: URL(string: movie.mainPosterUrl!)!,
+                                     placeholder: #imageLiteral(resourceName: "placeholder"),
+                                     options: [.transition(.fade(1))],
+                                     progressBlock: .none,
+                                     completionHandler: .none)
         }
         
         return cell

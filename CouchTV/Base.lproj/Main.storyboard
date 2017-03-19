@@ -31,19 +31,11 @@
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="477"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vw3-rW-rfS">
-                                            <rect key="frame" x="4" y="14" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCE-3p-Q00">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lCE-3p-Q00">
                                             <rect key="frame" x="0.0" y="0.0" width="351" height="477"/>
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="1" green="0.82599521769999995" blue="0.38295484079999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="lCE-3p-Q00" firstAttribute="centerY" secondItem="Ri9-8Y-Dpp" secondAttribute="centerY" id="A7r-JN-13Z"/>
                                     <constraint firstItem="lCE-3p-Q00" firstAttribute="width" secondItem="Ri9-8Y-Dpp" secondAttribute="width" id="AVi-oz-nN4"/>
@@ -52,7 +44,6 @@
                                 </constraints>
                                 <size key="customSize" width="351" height="477"/>
                                 <connections>
-                                    <outlet property="label" destination="vw3-rW-rfS" id="jEQ-Fk-1KT"/>
                                     <outlet property="poster" destination="lCE-3p-Q00" id="f0P-UE-0Ag"/>
                                 </connections>
                             </collectionViewCell>
@@ -65,7 +56,7 @@
                                     <rect key="frame" x="30" y="30" width="1890" height="43"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                     <nil key="textColor"/>
-                                    <color key="highlightedColor" patternImage="8FE991B7-8904-4FB9-8394-FA8F9FBD2CD9" colorSpace="pattern"/>
+                                    <color key="highlightedColor" patternImage="10A3F7B9-3B4E-4161-B109-CB4625F8A12B" colorSpace="pattern"/>
                                     <size key="shadowOffset" width="5" height="-1"/>
                                 </label>
                             </subviews>
@@ -357,7 +348,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="477"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-aM-JrM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hqz-aM-JrM">
                                             <rect key="frame" x="-1" y="-1" width="352" height="478"/>
                                         </imageView>
                                     </subviews>
@@ -414,7 +405,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="351" height="477"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52Z-UP-oU8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" adjustsImageWhenAncestorFocused="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52Z-UP-oU8">
                                             <rect key="frame" x="0.0" y="0.0" width="351" height="477"/>
                                         </imageView>
                                     </subviews>
@@ -466,7 +457,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="8FE991B7-8904-4FB9-8394-FA8F9FBD2CD9" width="256" height="256">
+        <image name="10A3F7B9-3B4E-4161-B109-CB4625F8A12B" width="256" height="256">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -4908,9 +4899,9 @@ AAQOmQAEDqEABA6kAAQOqQAEDrEABA60AAQOxgAEDskABA7OAAAAAAAABAEAAAAAAAAAQQAAAAAAAAAA
 AAAAAAAEDtA
 </mutableData>
         </image>
-        <image name="first" width="30" height="30"/>
+        <image name="placeholder" width="351" height="477"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lsv-J2-yvg"/>
+        <segue reference="Uys-XM-KsP"/>
     </inferredMetricsTieBreakers>
 </document>

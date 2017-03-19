@@ -11,7 +11,6 @@ import UIKit
 
 class DiscoverCollectionCell: UICollectionViewCell {
     
-    @IBOutlet weak var label: UILabel!
     @IBOutlet weak var poster: UIImageView!
     
 }

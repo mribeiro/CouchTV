@@ -40,7 +40,11 @@ class SearchController: UICollectionViewController, UISearchResultsUpdating {
             
             let movie = self.movies?[indexPath.row]
             if let mainposter = movie?.mainPosterUrl {
-                _cell.poster.kf.setImage(with: URL(string: mainposter)!)
+                _cell.poster.kf.setImage(with: URL(string: mainposter)!,
+                                         placeholder: #imageLiteral(resourceName: "placeholder"),
+                                         options: [.transition(.fade(1))],
+                                         progressBlock: .none,
+                                         completionHandler: .none)
             }
             
         }
