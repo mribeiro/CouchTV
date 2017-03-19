@@ -24,6 +24,8 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var mpaaLabel: UILabel!
     @IBOutlet weak var taglineLabel: UILabel!
     @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var ignoreButton: UIButton!
+    @IBOutlet weak var seenButton: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         loadMovieData()
@@ -56,6 +58,14 @@ class MovieViewController: UIViewController {
         
         downloadButton.isEnabled = movie.imdbId != nil
         
+        if let discoveryMovie = movie as? DiscoveryMovie, discoveryMovie.suggestion {
+            ignoreButton.isHidden = false
+            seenButton.isHidden = false
+        } else {
+            ignoreButton.isHidden = true
+            seenButton.isHidden = true
+        }
+        
         switch movie.status {
         case .Downloaded:
             self.downloadButton.setTitle("Downloaded", for: .disabled)
@@ -73,9 +83,13 @@ class MovieViewController: UIViewController {
     @IBAction func downloadClicked(sender: AnyObject) {
         
         downloadButton.isEnabled = false
+        downloadButton.setTitle("...", for: .disabled)
+        
+        self.ignoreButton.isEnabled = false
+        self.seenButton.isEnabled = false
+        
         setNeedsFocusUpdate()
         updateFocusIfNeeded()
-        downloadButton.setTitle("Requesting...", for: .disabled)
         
         MovieProviderManager.instance.fetchMovie(imdbId: movie.imdbId!) { result in
             if result {
@@ -85,9 +99,28 @@ class MovieViewController: UIViewController {
             } else {
                 self.downloadButton.isEnabled = true
                 self.downloadButton.titleLabel?.text = "Add"
+                self.ignoreButton.isEnabled = true
+                self.seenButton.isEnabled = true
             }
         }
     }
     
+    @IBAction func ignoreClicked(_ sender: Any) {
+        seenOrIgnoredClicked(false)
+    }
+    
+    @IBAction func seenClicked(_ sender: Any) {
+        seenOrIgnoredClicked(true)
+    }
+    
+    private func seenOrIgnoredClicked(_ markAsSeen: Bool) {
+        
+        MovieProviderManager.instance.ignoreSuggestion(imdbId: movie.imdbId!, andMarkAsSeen: markAsSeen) { (result) in
+            if result {
+                self.dismiss(animated: true, completion: .none)
+            }
+        }
+        
+    }
     
 }

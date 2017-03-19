@@ -71,8 +71,12 @@ enum CouchPotatoService: TargetType {
         case .getMovies(let status):
             return ["status": status]
         
-        case .ignoreSuggestion(let imdbId):
-            return ["imdb": imdbId]
+        case .ignoreSuggestion(let imdbId, let seen):
+            var params = ["imdb": imdbId]
+            if seen {
+                params["mark_seen"] = "1"
+            }
+            return params
             
             
         default:
@@ -123,7 +127,7 @@ enum CouchPotatoService: TargetType {
         case .getMovies(_):
             return "movie.list"
         
-        case .ignoreSuggestion(_):
+        case .ignoreSuggestion(_, _):
             return "suggestion.ignore"
             
         }
@@ -136,7 +140,7 @@ enum CouchPotatoService: TargetType {
     case search(searchTerm: String)
     case getKey(username: String, password: String)
     case getMovies(status: String)
-    case ignoreSuggestion(imdbId: String)
+    case ignoreSuggestion(imdbId: String, seen: Bool)
     
 }
 

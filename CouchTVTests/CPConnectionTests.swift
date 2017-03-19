@@ -131,7 +131,7 @@ class CPConnectionTests: XCTestCase {
         
         let asyncExpectation = expectation(description: "longRunningFunction")
         
-        provider.ignoreSuggestion(imdbId: "tt123456") { (result) in
+        provider.ignoreSuggestion(imdbId: "tt123456", andMarkAsSeen: false) { (result) in
             XCTAssertTrue(result)
             asyncExpectation.fulfill()
         }

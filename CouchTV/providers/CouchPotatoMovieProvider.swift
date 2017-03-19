@@ -87,6 +87,9 @@ class CouchPotatoMovieProvider: MovieProvider {
                                 let suggestionsFromCP = suggestions.value
                                 suggestionsFromCP?.name = "Suggestions"
                                 if let _suggestions = suggestionsFromCP {
+                                    _suggestions.movies?.forEach({ (movie) in
+                                        movie.suggestion = true
+                                    })
                                     return [_suggestions]
                                 }
                             }
@@ -203,8 +206,8 @@ class CouchPotatoMovieProvider: MovieProvider {
         
     }
     
-    func ignoreSuggestion(imdbId: String, callback: @escaping ((Bool) -> ())) {
-        doMoyaRequest(CouchPotatoService.ignoreSuggestion(imdbId: imdbId), whenSuccess: { (json) in
+    func ignoreSuggestion(imdbId: String, andMarkAsSeen seen: Bool, callback: @escaping ((Bool) -> ())) {
+        doMoyaRequest(CouchPotatoService.ignoreSuggestion(imdbId: imdbId, seen: seen), whenSuccess: { (json) in
             
             if let j = json {
                 let result : Bool = BaseResponse.decode(j).value?.result ?? false

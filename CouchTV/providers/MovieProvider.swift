@@ -20,7 +20,7 @@ protocol MovieProvider {
     
     func getWanted(callback: @escaping(([DiscoveryMovie]?)->()))
     
-    func ignoreSuggestion(imdbId: String, callback: @escaping((Bool)->()))
+    func ignoreSuggestion(imdbId: String, andMarkAsSeen seen: Bool, callback: @escaping((Bool)->()))
     
     // out of scope, for now
     func getKey(username: String, password: String, callback: @escaping ((String?)->()))

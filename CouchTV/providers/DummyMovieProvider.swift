@@ -86,7 +86,7 @@ class DummyMovieProvider : MovieProvider {
         }
     }
     
-    func ignoreSuggestion(imdbId: String, callback: @escaping ((Bool) -> ())) {
+    func ignoreSuggestion(imdbId: String, andMarkAsSeen: Bool, callback: @escaping ((Bool) -> ())) {
         callback(true)
     }
     

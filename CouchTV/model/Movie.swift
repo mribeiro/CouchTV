@@ -86,6 +86,8 @@ class Movie {
 // This is also used in Wanted movies
 class DiscoveryMovie: Movie, Decodable {
     
+    var suggestion: Bool = false
+    
     public static func decode(_ json: JSON) -> Decoded<DiscoveryMovie> {
         let a = curry(DiscoveryMovie.init)
             <^> json <| "title"
