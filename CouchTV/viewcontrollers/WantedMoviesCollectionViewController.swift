@@ -29,6 +29,10 @@ class WantedMoviesCollectionViewController: UICollectionViewController {
         
         if let _cell = cell as? WantedCollectionCell,
             let movie = moviesList?[indexPath.row] {
+            
+            _cell.poster.kf.cancelDownloadTask()
+            _cell.poster.kf.indicatorType = .activity
+            
             _cell.poster.kf.setImage(with: URL(string: movie.mainPosterUrl!)!,
                                      placeholder: #imageLiteral(resourceName: "placeholder"),
                                      options: [.transition(.fade(1))],

@@ -47,6 +47,8 @@ class DiscoverCollectionViewController: UICollectionViewController {
         let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: "disc_coll_cell", for: indexPath as IndexPath)
         
         if let _cell = cell as? DiscoverCollectionCell {
+            _cell.poster.kf.cancelDownloadTask()
+            _cell.poster.kf.indicatorType = .activity
             
             let movie = getMovieByIndexPath(indexPath: indexPath)
             
