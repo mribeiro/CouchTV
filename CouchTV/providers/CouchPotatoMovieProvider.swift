@@ -203,6 +203,20 @@ class CouchPotatoMovieProvider: MovieProvider {
         
     }
     
+    func ignoreSuggestion(imdbId: String, callback: @escaping ((Bool) -> ())) {
+        doMoyaRequest(CouchPotatoService.ignoreSuggestion(imdbId: imdbId), whenSuccess: { (json) in
+            
+            if let j = json {
+                let result : Bool = BaseResponse.decode(j).value?.result ?? false
+                callback(result)
+            }
+            
+        }, whenError: { (error) in
+            callback(false)
+            
+        }, whenComplete: .none)
+    }
+    
     
     internal func testConnection(callback: @escaping ((Bool)->())) {
         guard PreferencesProviderManager.instance.isAppConfigured else {

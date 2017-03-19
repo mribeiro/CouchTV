@@ -33,8 +33,6 @@ enum CouchPotatoService: TargetType {
         case .search:
             return self.getDataFromResource("search_sample", ofType: "json")
             
-            
-            
         default:
             return "{}".utf8Encoded
         }
@@ -72,6 +70,10 @@ enum CouchPotatoService: TargetType {
             
         case .getMovies(let status):
             return ["status": status]
+        
+        case .ignoreSuggestion(let imdbId):
+            return ["imdb": imdbId]
+            
             
         default:
             return nil
@@ -120,6 +122,9 @@ enum CouchPotatoService: TargetType {
             
         case .getMovies(_):
             return "movie.list"
+        
+        case .ignoreSuggestion(_):
+            return "suggestion.ignore"
             
         }
     }
@@ -131,6 +136,7 @@ enum CouchPotatoService: TargetType {
     case search(searchTerm: String)
     case getKey(username: String, password: String)
     case getMovies(status: String)
+    case ignoreSuggestion(imdbId: String)
     
 }
 

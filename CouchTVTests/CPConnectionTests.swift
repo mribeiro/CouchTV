@@ -127,4 +127,19 @@ class CPConnectionTests: XCTestCase {
         }
     }
     
+    func testIgnoreMovie() {
+        
+        let asyncExpectation = expectation(description: "longRunningFunction")
+        
+        provider.ignoreSuggestion(imdbId: "tt123456") { (result) in
+            XCTAssertTrue(result)
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 30) { (error) in
+            XCTAssertTrue(error == nil, "Did not ignore in time")
+        }
+        
+    }
+    
 }

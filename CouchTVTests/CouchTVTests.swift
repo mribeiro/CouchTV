@@ -148,6 +148,16 @@ class CouchTVTests: XCTestCase {
         
     }
     
+    func testIgnoreSuggestionParse() {
+        openAndReadFile(fileName: "suggestion_ignore_sample", ofType: "json") { (json) in
+            let j = JSON(json)
+            let result = BaseResponse.decode(j).value?.result ?? false
+            
+            XCTAssertTrue(result)
+            
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

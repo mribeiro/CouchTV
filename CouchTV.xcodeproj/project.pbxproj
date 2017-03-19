@@ -35,6 +35,9 @@
 		E679A15C1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15B1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift */; };
 		E679A15F1E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */; };
 		E679A1601E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */; };
+		E679A1621E7EF15D0075EB0C /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1611E7EF15D0075EB0C /* BaseResponse.swift */; };
+		E679A1641E7EF4A60075EB0C /* suggestion_ignore_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E679A1631E7EF4A60075EB0C /* suggestion_ignore_sample.json */; };
+		E679A1651E7EF4D80075EB0C /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1611E7EF15D0075EB0C /* BaseResponse.swift */; };
 		E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA571E244A6200459F69 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA561E244A6200459F69 /* ApiKey.swift */; };
@@ -90,6 +93,8 @@
 		E679A1581E7DD7880075EB0C /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = model/MovieList.swift; sourceTree = "<group>"; };
 		E679A15B1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WantedMoviesCollectionViewController.swift; path = viewcontrollers/WantedMoviesCollectionViewController.swift; sourceTree = "<group>"; };
 		E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WantedCollectionCell.swift; path = viewcontrollers/WantedCollectionCell.swift; sourceTree = "<group>"; };
+		E679A1611E7EF15D0075EB0C /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseResponse.swift; path = model/BaseResponse.swift; sourceTree = "<group>"; };
+		E679A1631E7EF4A60075EB0C /* suggestion_ignore_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = suggestion_ignore_sample.json; sourceTree = "<group>"; };
 		E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouchPotatoService.swift; path = providers/CouchPotatoService.swift; sourceTree = "<group>"; };
 		E67ADA561E244A6200459F69 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryCategory.swift; path = model/DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -162,6 +167,7 @@
 		E6556F0F1CBD38F500C391F6 = {
 			isa = PBXGroup;
 			children = (
+				E679A1631E7EF4A60075EB0C /* suggestion_ignore_sample.json */,
 				E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */,
 				E6738E8C1E2835BD005CF531 /* apikey_sample.json */,
 				E62C34801CC6303500A85945 /* movie_sample.json */,
@@ -209,6 +215,7 @@
 				E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */,
 				E67ADA561E244A6200459F69 /* ApiKey.swift */,
 				E679A1581E7DD7880075EB0C /* MovieList.swift */,
+				E679A1611E7EF15D0075EB0C /* BaseResponse.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				E62C34811CC6303500A85945 /* movie_sample.json in Resources */,
 				E6556F251CBD38F600C391F6 /* Assets.xcassets in Resources */,
 				E6F224211CC3A506007F1FBC /* suggestions_example.json in Resources */,
+				E679A1641E7EF4A60075EB0C /* suggestion_ignore_sample.json in Resources */,
 				E6556F231CBD38F600C391F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +479,7 @@
 				E60A7CED1CC57AFA00395B01 /* MovieViewController.swift in Sources */,
 				E62C34831CC6698800A85945 /* SettingsViewController.swift in Sources */,
 				E66E59B01CBD586D00CCE9D0 /* MovieProvider.swift in Sources */,
+				E679A1621E7EF15D0075EB0C /* BaseResponse.swift in Sources */,
 				E6C895DF1CC2A31A004581CF /* DiscoverCollectionCell.swift in Sources */,
 				E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */,
 				E679A1591E7DD7880075EB0C /* MovieList.swift in Sources */,
@@ -503,6 +512,7 @@
 				E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */,
 				E6F2241D1CC39E5D007F1FBC /* DiscoveryCategory.swift in Sources */,
 				E62C348E1CC7953C00A85945 /* CouchPotatoMovieProvider.swift in Sources */,
+				E679A1651E7EF4D80075EB0C /* BaseResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
