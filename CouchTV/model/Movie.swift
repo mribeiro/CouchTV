@@ -83,7 +83,7 @@ class Movie {
     }
 
 }
-
+// This is also used in Wanted movies
 class DiscoveryMovie: Movie, Decodable {
     
     public static func decode(_ json: JSON) -> Decoded<DiscoveryMovie> {

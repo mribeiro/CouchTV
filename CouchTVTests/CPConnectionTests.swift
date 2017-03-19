@@ -26,7 +26,7 @@ class CPConnectionTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        preferences.rootUrl = URL(string: "http://192.168.1.200:5050/cp")
+        preferences.rootUrl = URL(string: "http://192.168.20.200:5050/cp")
         preferences.apiKey = "d55fb3c8feae47048d7e6229be94dbeb"
         
         
@@ -136,6 +136,20 @@ class CPConnectionTests: XCTestCase {
         
         waitForExpectations(timeout: 30) { error in
             XCTAssertTrue(error == nil, "Did not get categories in time")
+        }
+    }
+    
+    func testWantedMovies() {
+        
+        let asyncExpectation = expectation(description: "longRunningFunction")
+        
+        provider.getWanted { (movies) in
+            XCTAssertNotNil(movies)
+            asyncExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 30) { (error) in
+            XCTAssertTrue(error == nil, "Did not get movies in time")
         }
     }
     

@@ -182,6 +182,27 @@ class CouchPotatoMovieProvider: MovieProvider {
                       whenComplete: .none)
     }
     
+    func getWanted(callback: @escaping(([DiscoveryMovie]?)->())) {
+        
+        doMoyaRequest(CouchPotatoService.getMovies(status: "active"),
+                      whenSuccess: { (json) in
+                        var movieList: [DiscoveryMovie]?
+                        
+                        if let _json = json {
+                            let movieListDecoded = MovieList.decode(_json)
+                            movieList = movieListDecoded.value?.movies
+                        }
+                        
+                        callback(movieList)
+            
+        },
+                      whenError: { (error) in
+                        callback(nil)
+        },
+                      whenComplete: .none)
+        
+    }
+    
     
     internal func testConnection(callback: @escaping ((Bool)->())) {
         guard PreferencesProviderManager.instance.isAppConfigured else {

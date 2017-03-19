@@ -136,6 +136,18 @@ class CouchTVTests: XCTestCase {
         }
     }
     
+    func testMovieListWantedParse() {
+        
+        openAndReadFile(fileName: "movie_list_wanted_sample", ofType: "json") { (json) in
+            let j = JSON(json)
+            let movieList = MovieList.decode(j)
+            
+            XCTAssertEqual(movieList.value?.movies?.count, 29)
+            
+        }
+        
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

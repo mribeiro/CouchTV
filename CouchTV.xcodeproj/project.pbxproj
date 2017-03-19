@@ -29,6 +29,9 @@
 		E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */; };
 		E6738E8D1E2835BD005CF531 /* apikey_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E6738E8C1E2835BD005CF531 /* apikey_sample.json */; };
 		E6738E8E1E2835BD005CF531 /* apikey_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E6738E8C1E2835BD005CF531 /* apikey_sample.json */; };
+		E679A1571E7DD4A30075EB0C /* movie_list_wanted_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */; };
+		E679A1591E7DD7880075EB0C /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1581E7DD7880075EB0C /* MovieList.swift */; };
+		E679A15A1E7DD7880075EB0C /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1581E7DD7880075EB0C /* MovieList.swift */; };
 		E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA571E244A6200459F69 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA561E244A6200459F69 /* ApiKey.swift */; };
@@ -80,6 +83,8 @@
 		E66E59AF1CBD586D00CCE9D0 /* MovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieProvider.swift; path = providers/MovieProvider.swift; sourceTree = "<group>"; };
 		E66E59B11CBD58B900CCE9D0 /* DummyMovieProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DummyMovieProvider.swift; path = providers/DummyMovieProvider.swift; sourceTree = "<group>"; };
 		E6738E8C1E2835BD005CF531 /* apikey_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apikey_sample.json; sourceTree = "<group>"; };
+		E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_list_wanted_sample.json; sourceTree = "<group>"; };
+		E679A1581E7DD7880075EB0C /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = model/MovieList.swift; sourceTree = "<group>"; };
 		E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouchPotatoService.swift; path = providers/CouchPotatoService.swift; sourceTree = "<group>"; };
 		E67ADA561E244A6200459F69 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryCategory.swift; path = model/DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		E6556F0F1CBD38F500C391F6 = {
 			isa = PBXGroup;
 			children = (
+				E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */,
 				E6738E8C1E2835BD005CF531 /* apikey_sample.json */,
 				E62C34801CC6303500A85945 /* movie_sample.json */,
 				E6F2241F1CC3A48E007F1FBC /* suggestions_example.json */,
@@ -197,6 +203,7 @@
 				E66E59AC1CBD580B00CCE9D0 /* Movie.swift */,
 				E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */,
 				E67ADA561E244A6200459F69 /* ApiKey.swift */,
+				E679A1581E7DD7880075EB0C /* MovieList.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -334,6 +341,7 @@
 				E6738E8D1E2835BD005CF531 /* apikey_sample.json in Resources */,
 				E63D3B9D1CC3DD33008AE114 /* search_sample.json in Resources */,
 				E64091991CC3C06900FA0BE7 /* charts_sample.json in Resources */,
+				E679A1571E7DD4A30075EB0C /* movie_list_wanted_sample.json in Resources */,
 				E62C34811CC6303500A85945 /* movie_sample.json in Resources */,
 				E6556F251CBD38F600C391F6 /* Assets.xcassets in Resources */,
 				E6F224211CC3A506007F1FBC /* suggestions_example.json in Resources */,
@@ -457,6 +465,7 @@
 				E66E59B01CBD586D00CCE9D0 /* MovieProvider.swift in Sources */,
 				E6C895DF1CC2A31A004581CF /* DiscoverCollectionCell.swift in Sources */,
 				E66E59B21CBD58B900CCE9D0 /* DummyMovieProvider.swift in Sources */,
+				E679A1591E7DD7880075EB0C /* MovieList.swift in Sources */,
 				E6556F1C1CBD38F600C391F6 /* AppDelegate.swift in Sources */,
 				E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */,
 				E6F2240B1CC2F73E007F1FBC /* SearchCollectionCell.swift in Sources */,
@@ -478,6 +487,7 @@
 				E62C34921CC7985100A85945 /* DummyMovieProvider.swift in Sources */,
 				E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */,
 				E67ADA581E244CF300459F69 /* ApiKey.swift in Sources */,
+				E679A15A1E7DD7880075EB0C /* MovieList.swift in Sources */,
 				E62C34901CC7965100A85945 /* MovieProvider.swift in Sources */,
 				E62C348F1CC7957E00A85945 /* PreferencesProvider.swift in Sources */,
 				E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */,
