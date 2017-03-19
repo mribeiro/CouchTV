@@ -72,6 +72,20 @@ class DummyMovieProvider : MovieProvider {
         callback(filteredMovies)
     }
     
+    func getWanted(callback: @escaping (([DiscoveryMovie]?) -> ())) {
+        print("Getting wanted dummies")
+        
+        var movieList: MovieList?
+        if let json = loadFileByName(name: "movie_list_wanted_sample", andExtension: "json") {
+            
+            let j = JSON(json)
+            movieList = MovieList.decode(j).value
+            callback(movieList?.movies)
+            
+            
+        }
+    }
+    
     func testConnection(callback: @escaping ((Bool) -> ())) {
         callback(true)
     }

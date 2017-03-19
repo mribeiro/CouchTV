@@ -32,6 +32,9 @@
 		E679A1571E7DD4A30075EB0C /* movie_list_wanted_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */; };
 		E679A1591E7DD7880075EB0C /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1581E7DD7880075EB0C /* MovieList.swift */; };
 		E679A15A1E7DD7880075EB0C /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A1581E7DD7880075EB0C /* MovieList.swift */; };
+		E679A15C1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15B1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift */; };
+		E679A15F1E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */; };
+		E679A1601E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */; };
 		E67ADA511E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */; };
 		E67ADA571E244A6200459F69 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E67ADA561E244A6200459F69 /* ApiKey.swift */; };
@@ -85,6 +88,8 @@
 		E6738E8C1E2835BD005CF531 /* apikey_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apikey_sample.json; sourceTree = "<group>"; };
 		E679A1561E7DD4A30075EB0C /* movie_list_wanted_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = movie_list_wanted_sample.json; sourceTree = "<group>"; };
 		E679A1581E7DD7880075EB0C /* MovieList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieList.swift; path = model/MovieList.swift; sourceTree = "<group>"; };
+		E679A15B1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WantedMoviesCollectionViewController.swift; path = viewcontrollers/WantedMoviesCollectionViewController.swift; sourceTree = "<group>"; };
+		E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WantedCollectionCell.swift; path = viewcontrollers/WantedCollectionCell.swift; sourceTree = "<group>"; };
 		E67ADA501E22CF0500459F69 /* CouchPotatoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CouchPotatoService.swift; path = providers/CouchPotatoService.swift; sourceTree = "<group>"; };
 		E67ADA561E244A6200459F69 /* ApiKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		E684B9FA1CC2C6A8007CF72F /* DiscoveryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiscoveryCategory.swift; path = model/DiscoveryCategory.swift; sourceTree = "<group>"; };
@@ -234,6 +239,8 @@
 				E6F2240A1CC2F73E007F1FBC /* SearchCollectionCell.swift */,
 				E60A7CEC1CC57AFA00395B01 /* MovieViewController.swift */,
 				E62C34821CC6698800A85945 /* SettingsViewController.swift */,
+				E679A15B1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift */,
+				E679A15E1E7E7B0F0075EB0C /* WantedCollectionCell.swift */,
 			);
 			name = viewcontrollers;
 			sourceTree = "<group>";
@@ -459,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E679A15C1E7E76670075EB0C /* WantedMoviesCollectionViewController.swift in Sources */,
 				E684B9FF1CC2E165007CF72F /* SearchController.swift in Sources */,
 				E60A7CED1CC57AFA00395B01 /* MovieViewController.swift in Sources */,
 				E62C34831CC6698800A85945 /* SettingsViewController.swift in Sources */,
@@ -474,6 +482,7 @@
 				E62C34861CC67BB000A85945 /* PreferencesProvider.swift in Sources */,
 				E6C895DD1CC2A293004581CF /* DiscoverCollectionViewController.swift in Sources */,
 				E62C348B1CC76A0900A85945 /* CouchPotatoMovieProvider.swift in Sources */,
+				E679A15F1E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */,
 				E684B9FB1CC2C6A8007CF72F /* DiscoveryCategory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +497,7 @@
 				E6F224131CC39C2A007F1FBC /* CouchTVTests.swift in Sources */,
 				E67ADA581E244CF300459F69 /* ApiKey.swift in Sources */,
 				E679A15A1E7DD7880075EB0C /* MovieList.swift in Sources */,
+				E679A1601E7E7B0F0075EB0C /* WantedCollectionCell.swift in Sources */,
 				E62C34901CC7965100A85945 /* MovieProvider.swift in Sources */,
 				E62C348F1CC7957E00A85945 /* PreferencesProvider.swift in Sources */,
 				E67ADA521E22CF0500459F69 /* CouchPotatoService.swift in Sources */,

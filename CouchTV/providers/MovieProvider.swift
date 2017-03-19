@@ -18,6 +18,8 @@ protocol MovieProvider {
     
     func getDiscovery(callback: @escaping ([DiscoveryCategory]?)->())
     
+    func getWanted(callback: @escaping(([DiscoveryMovie]?)->()))
+    
     // out of scope, for now
     func getKey(username: String, password: String, callback: @escaping ((String?)->()))
     

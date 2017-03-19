@@ -36,7 +36,7 @@ class MovieViewController: UIViewController {
         let imageUrl = URL(string: (self.movie.mainPosterUrl)!)!
         self.poster.kf.setImage(with: imageUrl)
         self.movieNameLabel.text = self.movie.name
-        if let rating = self.movie.rating?.first {
+        if let rating = self.movie.rating?.first, rating > 0 {
             self.ratingProgressView.setProgress(rating / 10, animated: true)
             
         } else {
@@ -48,7 +48,7 @@ class MovieViewController: UIViewController {
         self.mpaaLabel.text = movie.mpaa
         self.yearLabel.text = String(movie.year)
         
-        if let movieLength = movie.length {
+        if let movieLength = movie.length, movieLength > 0 {
             self.durationLabel.text = "\(movieLength) min"
         } else {
             self.durationLabel.isHidden = true

@@ -40,37 +40,11 @@ class CPConnectionTests: XCTestCase {
     }
     
     func testGetKey() {
-        
         let asyncExpectation = expectation(description: "longRunningFunction")
-        let p = MoyaProvider<CouchPotatoService>(endpointClosure: endpointClosure)
-        p.request(.getKey(username: "", password: "")) { (result) in
-            
-            switch result {
-            case .success(let j):
-                
-                let json = try? j.mapJSON()
-                let jj = JSON(json)
-                
-                
-                let decodedApiKey: Decoded<ApiKey> = ApiKey.decode(jj)
-                
-                let v = decodedApiKey.value
-                
-                let a = ""
-                
-                
-                
-            default:
-                let s = "";
-            }
-            
-            asyncExpectation.fulfill()
-
-        }
-
         
         self.provider.getKey(username: "", password: "") { (key) in
             XCTAssertEqual(key, "d55fb3c8feae47048d7e6229be94dbeb")
+            asyncExpectation.fulfill()
         }
                 
         waitForExpectations(timeout: 30)
