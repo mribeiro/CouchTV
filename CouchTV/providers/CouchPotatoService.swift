@@ -78,6 +78,8 @@ enum CouchPotatoService: TargetType {
             }
             return params
             
+        case .ignoreChart(let imdbId):
+            return ["imdb": imdbId]
             
         default:
             return nil
@@ -130,6 +132,9 @@ enum CouchPotatoService: TargetType {
         case .ignoreSuggestion(_, _):
             return "suggestion.ignore"
             
+        case .ignoreChart(_):
+            return "charts.ignore"
+            
         }
     }
     
@@ -141,6 +146,7 @@ enum CouchPotatoService: TargetType {
     case getKey(username: String, password: String)
     case getMovies(status: String)
     case ignoreSuggestion(imdbId: String, seen: Bool)
+    case ignoreChart(imdbId: String)
     
 }
 

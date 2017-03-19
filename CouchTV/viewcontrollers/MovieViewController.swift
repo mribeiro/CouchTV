@@ -58,13 +58,17 @@ class MovieViewController: UIViewController {
         
         downloadButton.isEnabled = movie.imdbId != nil
         
-        if let discoveryMovie = movie as? DiscoveryMovie, discoveryMovie.suggestion {
-            ignoreButton.isHidden = false
-            seenButton.isHidden = false
+        if let discoveryMovie = movie as? DiscoveryMovie {
+            if !discoveryMovie.suggestion {
+                seenButton.isHidden = true
+            }
+            
         } else {
+            
             ignoreButton.isHidden = true
             seenButton.isHidden = true
         }
+        
         
         switch movie.status {
         case .Downloaded:
@@ -106,21 +110,32 @@ class MovieViewController: UIViewController {
     }
     
     @IBAction func ignoreClicked(_ sender: Any) {
-        seenOrIgnoredClicked(false)
+        if let movie = self.movie as? DiscoveryMovie, movie.suggestion {
+            seenOrIgnoredClickedSuggestion(false)
+        } else {
+            ignoreChart()
+        }
+        
     }
     
     @IBAction func seenClicked(_ sender: Any) {
-        seenOrIgnoredClicked(true)
+        seenOrIgnoredClickedSuggestion(true)
     }
     
-    private func seenOrIgnoredClicked(_ markAsSeen: Bool) {
-        
+    private func seenOrIgnoredClickedSuggestion(_ markAsSeen: Bool) {
         MovieProviderManager.instance.ignoreSuggestion(imdbId: movie.imdbId!, andMarkAsSeen: markAsSeen) { (result) in
             if result {
                 self.dismiss(animated: true, completion: .none)
             }
         }
-        
+    }
+    
+    private func ignoreChart() {
+        MovieProviderManager.instance.ignoreChart(imdbId: movie.imdbId!) { (result) in
+            if result {
+                self.dismiss(animated: true, completion: .none)
+            }
+        }
     }
     
 }

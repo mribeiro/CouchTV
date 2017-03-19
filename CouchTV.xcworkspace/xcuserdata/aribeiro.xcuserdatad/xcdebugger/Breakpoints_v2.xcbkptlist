@@ -2,4 +2,246 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/viewcontrollers/MovieViewController.swift"
+            timestampString = "511644252.619962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "ignoreClicked(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.MovieViewController.ignoreClicked (Any) -&gt; ()"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/viewcontrollers/MovieViewController.swift"
+                  timestampString = "511644253.295124"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "23">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.MovieViewController.ignoreClicked (Any) -&gt; ()"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/viewcontrollers/MovieViewController.swift"
+                  timestampString = "511644253.297838"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/viewcontrollers/MovieViewController.swift"
+            timestampString = "511644265.445546"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "seenOrIgnoredClickedSuggestion(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/viewcontrollers/MovieViewController.swift"
+            timestampString = "511644272.473318"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "ignoreChart()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644327.890363"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
+            landmarkName = "ignoreChart(imdbId:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.CouchPotatoMovieProvider.(ignoreChart (imdbId : Swift.String, callback : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/providers/CouchPotatoMovieProvider.swift"
+                  timestampString = "511644328.114275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "229"
+                  endingLineNumber = "229"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.CouchPotatoMovieProvider.(ignoreChart (imdbId : Swift.String, callback : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/providers/CouchPotatoMovieProvider.swift"
+                  timestampString = "511644328.117366"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "229"
+                  endingLineNumber = "229"
+                  offsetFromSymbolStart = "399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644361.041446"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "227"
+            endingLineNumber = "227"
+            landmarkName = "ignoreChart(imdbId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644364.027133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "ignoreChart(imdbId:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644437.357929"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
+            landmarkName = "ignoreSuggestion(imdbId:andMarkAsSeen:callback:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.CouchPotatoMovieProvider.ignoreSuggestion (imdbId : Swift.String, andMarkAsSeen : Swift.Bool, callback : (Swift.Bool) -&gt; ()) -&gt; ()"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/providers/CouchPotatoMovieProvider.swift"
+                  timestampString = "511644437.572563"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "213"
+                  endingLineNumber = "213"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CouchTV.CouchPotatoMovieProvider.(ignoreSuggestion (imdbId : Swift.String, andMarkAsSeen : Swift.Bool, callback : (Swift.Bool) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "CouchTV"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aribeiro/Development/CouchTV/CouchTV/providers/CouchPotatoMovieProvider.swift"
+                  timestampString = "511644437.575208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "215"
+                  endingLineNumber = "215"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644527.353982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "doMoyaRequest(_:whenSuccess:whenError:whenComplete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CouchTV/providers/CouchPotatoMovieProvider.swift"
+            timestampString = "511644840.546321"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "doMoyaRequest(_:whenSuccess:whenError:whenComplete:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

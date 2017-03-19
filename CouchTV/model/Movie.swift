@@ -87,6 +87,7 @@ class Movie {
 class DiscoveryMovie: Movie, Decodable {
     
     var suggestion: Bool = false
+    var fromChart: Bool = false
     
     public static func decode(_ json: JSON) -> Decoded<DiscoveryMovie> {
         let a = curry(DiscoveryMovie.init)

@@ -53,6 +53,9 @@ class CouchPotatoMovieProvider: MovieProvider {
                                             } else {
                                                 
                                                 let chartsAsDiscoveryCategory: [DiscoveryCategory] = _charts.map({ (chart) -> DiscoveryCategory in
+                                                    chart.movies?.forEach({ (movie) in
+                                                        movie.fromChart = true
+                                                    })
                                                     return chart
                                                 })
                                                 
@@ -220,6 +223,20 @@ class CouchPotatoMovieProvider: MovieProvider {
         }, whenComplete: .none)
     }
     
+    func ignoreChart(imdbId: String, callback: @escaping ((Bool) -> ())) {
+        doMoyaRequest(CouchPotatoService.ignoreChart(imdbId: imdbId),
+                      whenSuccess: { (json) in
+                        if let j = json {
+                            let result : Bool = BaseResponse.decode(j).value?.result ?? false
+                            callback(result)
+                        }
+
+        },
+                      whenError: { (error) in
+                        callback(false)
+            
+        }, whenComplete: .none)
+    }
     
     internal func testConnection(callback: @escaping ((Bool)->())) {
         guard PreferencesProviderManager.instance.isAppConfigured else {

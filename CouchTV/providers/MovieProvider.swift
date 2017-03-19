@@ -22,6 +22,8 @@ protocol MovieProvider {
     
     func ignoreSuggestion(imdbId: String, andMarkAsSeen seen: Bool, callback: @escaping((Bool)->()))
     
+    func ignoreChart(imdbId: String, callback: @escaping((Bool)->()))
+    
     // out of scope, for now
     func getKey(username: String, password: String, callback: @escaping ((String?)->()))
     
